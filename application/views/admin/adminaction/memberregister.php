@@ -39,7 +39,7 @@ if(!isset($this->session->userdata['sess_id'])) {
         </div>
         <div class="form-group">
           <label for="uname">Username:</label>
-          <input type="text" name="uname" onchange="checkUname()" class="form-control" id="uname" placeholder="please enter username" required="required">
+          <input type="text" name="uname"  class="form-control" id="uname" placeholder="please enter username" required="required">
         </div>
         <div class="form-group">
           <span id="unameresult"></span>
@@ -120,7 +120,32 @@ if(!isset($this->session->userdata['sess_id'])) {
 
 
 
+<script type="text/javascript">
+   var unameresult=$('#unameresult');
+    $(document).ready(function(){
+      $('#uname').change(function(){
+          var uname=$('#uname').val();
+          alert(uname);
+          if(!uname==''){
+            $.ajax({
+              url:"<?php echo base_url();?>controlCheck/checkUnameAvailability",
+              type:"POST",
+              data:{uname:uname},
+              success:function(data){
+                unameresult.css({
+            'color':'red'
 
+          });
+                $('#unameresult').html(data);
+              },
+
+            });
+          }
+      });
+    });
+ 
+
+</script>
 
 <script type="text/javascript">
 // function checkUname(){

@@ -15,12 +15,12 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
   </div>
 
 
-<form class="" action="<?php echo base_url();?>controlSchedule/newSchedule" method="post" enctype="multipart/form-data">
+<form id="myForm" action="<?php echo base_url();?>controlSchedule/newSchedule" method="post" enctype="multipart/form-data">
   <div class="panel panel-body" style="font-size: 12px;">
   <div class="col-lg-4">
    <div class="form-group">
     <label for="mid">Member id:</label>
-   <select class="form-control" id="mid" name="mid">
+   <select class="form-control" id="mid" name="mid" onchange="getMember()">
      <option>please select member ID</option>
    <?php
 if($mid->num_rows() > 0){
@@ -36,7 +36,7 @@ foreach($mid->result() as $row){
 ?>
    </select>
   </div>
-
+<div id="memname"></div>
 <div class="form-group">
   <label for="mname">Member name:</label>
   <input type="text" name="mname" class="form-control" id="mname" required="required" placeholder="please enter member name">
@@ -440,5 +440,30 @@ foreach($cat->result() as $row){
 </div>
 
 <?php $this->load->view('footer');?>
+
+{
+<script>
+ 
+    $(document).ready(function(){
+      $('#mid').click(function(){
+          var mid=$('#mid').val();
+          
+          if(mid!="please select member ID"){
+           
+            $.ajax({
+              url:"<?php echo base_url();?>controlCheck/checkMemberName",
+              type:"POST",
+              data:{mid:mid},
+              success:function(data){
+                $('#mname').val(data);
+              }
+
+            });
+          }
+      });
+    });
+ 
+
+</script>
 
 

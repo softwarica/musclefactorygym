@@ -24,5 +24,21 @@ class ModelCheck extends CI_Model{
 			return false;
 		}
 	}
+
+	public function isMemberAvailable($mid){
+		$this->db->where('id',$mid);
+		$query=$this->db->get('tblregister');
+
+		if($query->num_rows() >0){
+			foreach ($query->result() as $row) {
+				return $row->mname;
+			}
+			
+		}else{
+			return false;
+		}
+	}
+
+
 }
 ?>

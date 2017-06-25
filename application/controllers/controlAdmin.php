@@ -37,7 +37,10 @@ public function newMember(){
 		array('required'=>'please clearify address'));
 
 		 $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tblregister.email]|strtolower');
-	 	$this->form_validation->set_message('is_unique', 'That Email is Already Exists.');
+	 	$this->form_validation->set_message('is_unique_email', 'That Email is Already Exists.');
+
+	 	 $this->form_validation->set_rules('uname', 'username', 'required|trim|is_unique[tblregister.uname]|strtolower');
+	 	$this->form_validation->set_message('is_unique_uname', 'That username is Already Exists.');
 
 	  $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');
 

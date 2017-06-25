@@ -62,10 +62,20 @@ class ControlCheck extends CI_Controller{
 		// }else{
 			$this->load->model('modelCheck');
 			if($this->modelCheck->isUnameAvailable($_POST['uname'])){
-					echo 'email already register';
+					echo 'uname already register';
 			}
 			else{
-				echo 'email available';
+				echo 'valid uname';
+			}
+		}
+
+		public function checkMemberName(){
+				$this->load->model('modelCheck');
+			if($this->modelCheck->isMemberAvailable($_POST['mid'])){
+					echo $this->modelCheck->isMemberAvailable($_POST['mid']);
+			}
+			else{
+				echo 'uname not available';
 			}
 		}
 	

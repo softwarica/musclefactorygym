@@ -24,6 +24,7 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
                <li><a data-toggle="pill" href="#menu1">MEMBERS LIST</a></li>
                <li><a data-toggle="pill" href="#menu2">EXERCISE LIST</a></li>
                <li><a data-toggle="pill" href="#menu3">DIET LIST</a></li>
+                <li><a data-toggle="pill" href="#menu4">SCHEDULE LIST</a></li>
                <li><a href="<?php echo base_url();?>controlCheck/destroySession">LOGOUT</a></li>
              </ul>
                
@@ -91,6 +92,16 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
                <div id="menu3" class="tab-pane fade">
                <div id="dietlistcontent"></div>
              </div>
+             <script type="text/javascript">
+            $(document).ready(function(){
+                $("#schlistcontent").load("<?php echo base_url();?>controlSchedule/getScheduleList");
+            })
+            </script>
+               <div id="menu4" class="tab-pane fade">
+               <div id="schlistcontent"></div>
+             </div>
+
+
                </div>
                
 

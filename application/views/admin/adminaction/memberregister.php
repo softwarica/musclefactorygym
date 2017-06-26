@@ -132,6 +132,7 @@ if(!isset($this->session->userdata['sess_id'])) {
               type:"POST",
               data:{uname:uname},
               success:function(data){
+                
                 unameresult.css({
             'color':'red'
 

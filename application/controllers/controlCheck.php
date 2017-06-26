@@ -79,6 +79,23 @@ class ControlCheck extends CI_Controller{
 			}
 		}
 	
+		public function checkCategoryName(){
+				$this->load->model('modelCheck');
+				$result=$this->modelCheck->isCategoryAvailable($_POST['get_option']);
+			
+
+						if($result->num_rows() >0){
+							echo "<option>".'please select exercise'."</otpion>"."<br/>";
+							foreach ($result->result() as $row) {
+
+								echo "<option>".$row->eqname."</otpion>"."<br/>";
+							}
+							}
+					else{
+							echo "<option>".'category not available'."</otpion>"."<br/>";
+						}
+		}
+	
 }
 
 

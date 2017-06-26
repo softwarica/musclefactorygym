@@ -39,6 +39,20 @@ class ModelCheck extends CI_Model{
 		}
 	}
 
+		public function isCategoryAvailable($cat){
+		$this->db->where('eqcat',$cat);
+		return $this->db->get('tblexercise');
+
+		// if($query->num_rows() >0){
+		// 	foreach ($query->result() as $row) {
+		// 		return $row->eqname;
+		// 	}
+			
+		// }else{
+		// 	return false;
+		// }
+	}
+
 
 }
 ?>

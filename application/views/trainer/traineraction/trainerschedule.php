@@ -12,6 +12,7 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
   <div class="panel panel-heading">
 <h5 align="center" class="btn btn-link">Schedule form:
  <span style="color:red"><?php  echo $this->session->flashdata('schinsert');?></span>
+ 
 </h5>
 
   </div>
@@ -55,15 +56,15 @@ foreach($mid->result() as $row){
 
 <div class="col-lg-10" id="menu">
 <!-- =========================================== -->
-  <div class="panel panel-default col-lg-4">
+  <div class="panel panel-default col-lg-3">
   
     <div class="panel-heading">
       <h4 class="panel-title">
         
           <div class="form-group">
 
-   <label for="day">day:</label>
-    <select class="form-control" id="day" name="day">
+   <label for="day1">day:</label>
+    <select class="form-control" id="day1" name="day1">
 
     <option>please select day</option>
     <option>sunday</option>
@@ -151,7 +152,7 @@ foreach($cat->result() as $row){
       </div>
    
 <!-- .......................................................................................... -->
-    <div class="panel panel-default col-lg-4">
+    <div class="panel panel-default col-lg-3">
   
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -247,7 +248,7 @@ foreach($cat->result() as $row){
       </div>
   </div>
 <!-- .......................................................................................... -->
-    <div class="panel panel-default col-lg-4">
+    <div class="panel panel-default col-lg-3">
   
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -343,7 +344,7 @@ foreach($cat->result() as $row){
       </div>
   </div>
 <!-- .......................................................................................... -->
- <div class="panel panel-default col-lg-4">
+ <div class="panel panel-default col-lg-3">
   
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -439,7 +440,7 @@ foreach($cat->result() as $row){
       </div>
   </div>
 <!-- .......................................................................................... -->
- <div class="panel panel-default col-lg-4">
+ <div class="panel panel-default col-lg-3">
   
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -535,7 +536,7 @@ foreach($cat->result() as $row){
       </div>
   </div>
 <!-- .......................................................................................... -->
- <div class="panel panel-default col-lg-4">
+ <div class="panel panel-default col-lg-3">
   
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -631,6 +632,104 @@ foreach($cat->result() as $row){
       </div>
   </div>
 <!-- .......................................................................................... -->
+<div class="panel panel-default col-lg-3">
+  
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        
+          <div class="form-group">
+
+   <label for="day7">day:</label>
+    <select class="form-control" id="day7" name="day7">
+
+    <option>please select day</option>
+    <option>all day</option>
+    <option>sunday</option>
+     <option>monday</option>
+      <option>tuesday</option>
+       <option>wednesday</option>
+        <option>thursday</option>
+         <option>friday</option>
+</select>
+ </div>
+
+      
+      </h4>
+    </div>
+      <div class="panel-body">
+      <div class="form-group">
+
+   <label for="cat7">Exercise category:</label>
+    <select class="form-control" id="cat7" name="cat7" onchange="fetch_select7(this.value);">
+
+    <option>please select category</option>
+   <?php
+if($cat->num_rows() > 0){
+foreach($cat->result() as $row){
+
+  ?>
+  
+  <option><?php echo $row->catname; ?></option>
+  
+    <?php
+}
+}
+?>
+</select>
+ </div>
+
+ 
+ <div class="form-group">
+    <div class="col-lg-12"><label for="ename">Exercise name:</label></div>
+    <div class="col-lg-12">
+    <select class="form-control" id="new_select1234567" name="ename1cat7">
+
+    <option>please select exercise</option>
+    <option></option>
+    
+</select>
+
+ <select class="form-control" id="new_select2234567" name="ename2cat7">
+
+    <option>please select exercise</option>
+    <option></option>
+    
+</select>
+
+ <select class="form-control" id="new_select3234567" name="ename3cat7">
+
+    <option>please select exercise</option>
+    <option></option>
+    
+</select>
+
+ <select class="form-control" id="new_select4234567" name="ename4cat7">
+
+    <option>please select exercise</option>
+    <option></option>
+    
+</select>
+
+ <select class="form-control" id="new_select5234567" name="ename5cat7">
+
+    <option>please select exercise</option>
+    <option></option>
+    
+</select>
+
+ <select class="form-control" id="new_select6234567" name="ename6cat7">
+
+    <option>please select exercise</option>
+    <option></option>
+    
+</select>
+       </div>
+  </div>
+
+      </div>
+  </div>
+<!-- .......................................................................................... -->
+
       </div>
   <div class="panel panel-footer">
 <input type="submit" name="btnschsubmit" value="submit" class="btn btn-success center-block" >
@@ -644,7 +743,7 @@ foreach($cat->result() as $row){
 
 <?php $this->load->view('footer');?>
 
-{
+
 <script>
  
     $(document).ready(function(){
@@ -798,6 +897,24 @@ foreach($cat->result() as $row){
     document.getElementById("new_select423456").innerHTML=data;
     document.getElementById("new_select523456").innerHTML=data; 
     document.getElementById("new_select623456").innerHTML=data; 
+ }
+ });
+}
+function fetch_select7(val7)
+{
+ $.ajax({
+ type: 'post',
+ url: '<?php echo base_url();?>controlCheck/checkCategoryName',
+ data: {
+  get_option:val7
+ },
+ success: function (data) {
+    document.getElementById("new_select1234567").innerHTML=data; 
+    document.getElementById("new_select2234567").innerHTML=data;
+    document.getElementById("new_select3234567").innerHTML=data; 
+    document.getElementById("new_select4234567").innerHTML=data;
+    document.getElementById("new_select5234567").innerHTML=data; 
+    document.getElementById("new_select6234567").innerHTML=data; 
  }
  });
 }

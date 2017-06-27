@@ -217,6 +217,16 @@ public function updateEditedExercise(){
 	redirect('controlAdmin/index');}
 }
 
+public function exvdoByExName(){
+	$eqname=$this->input->get('eqname');
+	$this->load->model('modelExercise');
+	$result=$this->modelExercise->retvdoByExName($eqname);
+	$data['exvideos']=$result;
+
+	$this->load->view('exercisevideo',$data);
+
+}
+
 }
 
 ?>

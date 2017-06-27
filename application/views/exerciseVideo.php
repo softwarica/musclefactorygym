@@ -2,8 +2,8 @@
 <?php include_once('header.php');?>
 
 	<?php
-if($chestexvideo->num_rows() > 0){
-	foreach($chestexvideo->result() as $row){
+if($exvideos->num_rows() > 0){
+	foreach($exvideos->result() as $row){
 	?>
 	<div class="panel panel-default">
 	<div class="panel panel-heading">

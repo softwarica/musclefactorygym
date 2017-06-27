@@ -95,6 +95,16 @@ class ControlCheck extends CI_Controller{
 							echo "<option>".'category not available'."</otpion>"."<br/>";
 						}
 		}
+
+		public function getSchedule(){
+			$mid=$this->input->post('mid');
+			$this->load->model('modelCheck');
+			$resultSchedule=$this->modelCheck->retriveScheduleById($mid);
+
+			$data['retriveschedule']=$resultSchedule;
+			$this->load->view('schedulepage',$data);
+
+		}
 	
 }
 

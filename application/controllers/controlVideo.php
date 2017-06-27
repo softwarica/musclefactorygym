@@ -173,10 +173,10 @@ class ControlVideo extends CI_controller{
 			$this->load->model('modelVideo');
 			$result=$this->modelVideo->retriveChestVideo($id);
 
-			$data['chestexvideo']=$result;
+			$data['exvideos']=$result;
 			
 
-			$this->load->view('chestVideo',$data);
+			$this->load->view('exerciseVideo',$data);
 		}
 
 		public function getVideoList(){

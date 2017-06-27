@@ -22,9 +22,11 @@ class ControlWelcome extends CI_Controller {
 	{
 		$this->load->model('modelWelcome');
 		$result=$this->modelWelcome->retriveClass();
+		$resultmember=$this->modelWelcome->retriveMember();
 		
 		
 		$data['class']=$result;
+		$data['mid']=$resultmember;
 		$this->load->view('index',$data);
 	}
 	public function goToBmiTable()

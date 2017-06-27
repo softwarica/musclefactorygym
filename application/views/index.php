@@ -3,6 +3,7 @@
 	<style type="text/css">
 	h4{
 color:white !important;
+
 	}
 	
 </style>
@@ -55,10 +56,8 @@ color:white !important;
 	 <div class="main">
 	 	 <div class="container-fluid" >
 			<!-- start content-top -->
-			<div class="row content-top">
-				 <div class="col-md-4">
-				  <img src="<?php echo base_url();?>assets/images/pic.png" class="img-responsive" alt="">
-			     </div>
+			<div class="row content-top" style="font-size:12px;">
+				
 				 <div class="col-md-4">
 				   <!-- <h3>NISCHAL shrestha</h3>
 				   <p>aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p> -->
@@ -130,6 +129,54 @@ color:white !important;
 				 	</div>
 				 	</div>
 				 </div>
+				 <div class="col-lg-4">
+				  <!-- <img src="<?php echo base_url();?>assets/images/pic.png" class="img-responsive" alt=""> -->
+				  <div class="card">
+				 	<div class="panel panel-default">
+				 	<div class="panel panel-heading" style="background: #72d0f4;">
+				 		<h5  align="center" style="color:white">login to get
+				 		exercise schedule:</h5>
+				 	</div>
+				 	
+				 	<div class="panel panel-body" style="color: #00bff0;">
+				 		<form method="post" action="<?php echo base_url();?>controlCheck/getSchedule">
+				 			<div class="panel panel-body" style="font-size: 12px;">
+				 			<div class="form-group">
+							<label for="mid">id:</label>
+							<!-- <input type="text" id="mid" placeholder="please enter id" name="mid" required="required" class="form-control"/> -->
+							  <select class="form-control" id="mid" name="mid">
+								     <option>please select member ID</option>
+								   <?php
+								if($mid->num_rows() > 0){
+								foreach($mid->result() as $row){
+
+								  ?>
+								  
+								  <option><?php echo $row->id; ?></option>
+								  
+								    <?php
+								}
+								}
+								?>
+								   </select>
+						</div>
+					</div>
+					<div class="panel panel-footer">
+						
+						  <input type="submit" name="btnsubmit" id="btnsubmit" value="submit" class="btn btn-success center-block" >
+					</div>
+
+
+				 		</form>
+
+
+
+				 		</div>
+
+				 	</div>
+				 	</div>
+
+			     </div>
 
             </div>
 		 </div>
@@ -137,11 +184,13 @@ color:white !important;
 		<div class="container">
 		    <div class="row content-middle">
 		      <!-- start content-middle -->
+		       
+		      <div class="col-lg-4">
 		       <div class="card">
      	 <a href="<?php echo base_url();?>controlVideo/getVideo">
      	 <h3 class="m_2">Videos</h3></a></div>
 
-	 	    	<div class="col-md-6 col-lg-offset-3"><a href="<?php echo base_url();?>controlVideo/getVideo">
+	 	    	<a href="<?php echo base_url();?>controlVideo/getVideo">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">click <span class="m_1">for more</span></li>
 	 	    			<li class="room">just chill</li>
@@ -170,7 +219,7 @@ color:white !important;
 	                       	<div class="info">view More</div>
 			              </div>
 	                  </div>
-			     </a></div>
+			     </a>
 			   <!--   //another video -->
 			   <!-- 	<div class="col-md-6 "><a href="<?php echo base_url();?>controlVideo/getVideo">
 	 	    		<ul class="spinning">
@@ -236,12 +285,7 @@ color:white !important;
 			     </a></div> -->
 				<div class="clear"></div>
 		   </div>
-		  <!-- end content-middle -->
-		
-
-						
-		   <div class="row about">
-		      <div class="col-md-8 ">
+		   <div class="col-lg-4 ">
 		     	 <h3 class="m_2 card">All Classes</h3>
 		     	 <div class="classes">
 		     	 	<!-- <div class="cardio_list"> -->
@@ -377,7 +421,6 @@ color:white !important;
 		     	 <!-- 	<div class="clear"></div> -->
 		     	 </div>
 				</div>
-				
 				<div class="col-md-4 ">
 				  <h3 class="m_4 card">Membership Prices</h3>
 				  <div class="members">
@@ -389,7 +432,16 @@ color:white !important;
 				  </div>
 			    </div>
 			    <div class="clear"></div>
-			</div>
+		   </div>
+		  <!-- end content-middle -->
+		
+
+						
+		<!--    <div class="row about">
+		      
+				
+				
+			</div> -->
 			
 		    <div class="row content_middle_bottom">
 			  <div class="col-md-4 ">

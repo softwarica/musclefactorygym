@@ -66,6 +66,10 @@ $this->db->where('id',$id);
 $this->db->update('tblexercise',$arr);
 
 }
+public function retvdoByExName($eqname){
+	$this->db->where('eqname',$eqname);
+	return $this->db->get('tblexercise');
+}
 }
 
 ?>

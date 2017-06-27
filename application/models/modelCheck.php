@@ -53,6 +53,12 @@ class ModelCheck extends CI_Model{
 		// }
 	}
 
+	public function retriveScheduleById($mid){
+
+		$this->db->where('mid',$mid);
+		return $this->db->get('tblschedule');
+	}
+
 
 }
 ?>

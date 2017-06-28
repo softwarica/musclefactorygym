@@ -10,7 +10,9 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
 <div class="container-fluid">
 <div class="panel panel-default" style="margin-top:10px">
   <div class="panel panel-heading">
-<h5 align="center" class="btn btn-link">Diet registration form</h5>
+<h5 align="center" class="btn btn-link">Diet registration form:
+<span style="color:red"><?php     echo $this->session->flashdata('dietinsertmsg');?></span>
+</h5>
 
   </div>
 <div class="panel panel-body" style="font-size: 12px;">

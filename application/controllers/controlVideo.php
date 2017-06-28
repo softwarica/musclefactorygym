@@ -39,7 +39,7 @@ class ControlVideo extends CI_controller{
 	$this->modelVideo->saveVideo($vname,$vcat,$video);
 
 	$this->session->set_flashdata('vdoinsertmsg','data sucessfully insert in video table');
-	redirect('controlWelcome/goToVideoRegistration');
+	redirect('controlVideo/getCategory');
 
 
 
@@ -92,7 +92,7 @@ class ControlVideo extends CI_controller{
 
 				// 		$path='C:/xampp/htdocs/muscleFactory/assets/images/exercises/'.$filename;
 				// unlink($path);
-				$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/exercises/'.$filename;
+				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/exercises/'.$filename;
 				unlink($path);	
 			
 
@@ -145,7 +145,7 @@ class ControlVideo extends CI_controller{
 
 				// 		$path='C:/xampp/htdocs/muscleFactory/assets/videos/'.$filename;
 				// unlink($path);
-			$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/videos/'.$filename;
+			$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/videos/'.$filename;
 				unlink($path);	
 
 			

@@ -46,7 +46,7 @@ class ControlDiet extends CI_Controller{
 			// $this->load->view('admin/adminPage',$data);
 		
 			$this->session->set_flashdata('dietinsertmsg','data sucessfully insert into table diet');
-			redirect('controlWelcome/goToTrainer');
+			redirect('controlWelcome/goToTrainerDietRegistration');
 			}
 				public function getDietList(){
 			
@@ -69,9 +69,9 @@ class ControlDiet extends CI_Controller{
 				$videoname=$row->dvideo;
 				
 				
-				$imagepath=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/diets/'.$imagename;
+				$imagepath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/diets/'.$imagename;
 				unlink($imagepath);
-				$videopath=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/diets/'.$videoname;
+				$videopath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/diets/'.$videoname;
 				unlink($videopath);
 			
 		}
@@ -81,23 +81,21 @@ class ControlDiet extends CI_Controller{
 		$this->session->set_flashdata('dietdeletemsg','data sucessfully delete from table diet');
 			redirect('controlWelcome/goToTrainer');
 
-			// if($result->num_rows() > 0){
-			// 	foreach($result->result() as $row){
-			// 		$filename=$row->dimage;
-			// 		$videoname=$row->dvideo;
-			// 		$path='C:/xampp/htdocs/muscleFactory/assets/images/members/'.$filename;
-			// 	unlink($path);
-			// 	// $path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/diets/'.$filename;
-				
-				
-			
-			// 	// unlik($path);
-				
-			// 	}
-			// }
-
-
 		}
+
+
+
+
+		public function editDiet(){
+			$id=$this->input->get('id');
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveExerciseById($id);
+			$resultcat=$this->modelExercise->retriveCategory();
+
+			$data['retriveexerciselist']=$result;
+			$data['eqclass']=$resultcat;
+			$this->load->view('admin/adminupdate/editexercise',$data);
+}
 }
 
 ?>

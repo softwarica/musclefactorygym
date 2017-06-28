@@ -123,7 +123,7 @@ redirect('controlWelcome/goToTrainerRegistration');
 			$this->modelTrainer->updateTrainer($id,$tname,$address,$email,$contact,$uname,$pword,$dob,$jdate,$package);
 
 			$this->session->set_flashData('edit_trainer_message','trainer successfully update');
-					redirect('controlAdmin/index');
+					redirect(base_url()."controlTrainer/editTrainer?id=".$id);
 
 					}
 
@@ -157,7 +157,7 @@ redirect('controlWelcome/goToTrainerRegistration');
 
 				// 		$path='C:/xampp/htdocs/muscleFactory/assets/images/trainers/'.$filename;
 				// unlink($path);
-				$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/trainers/'.$filename;
+				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/trainers/'.$filename;
 				unlink($path);	
 			
 
@@ -191,11 +191,12 @@ $data['memberlist']=$result;
 }
 public function viewDetails(){
 	$id=$this->input->get('id');
+	$this->session->set_userdata('sess_id',$id);
 	$this->load->model('modelTrainer');
 	$result=$this->modelTrainer->retriveMemberById($id);
 
 	$data['viewdetails']=$result;
-	$this->load->view('trainer/memberdetails',$data);
+	$this->load->view('trainer/trainerheaderlist/memberlist/memberdetails',$data);
 }
 
 // public function dietForm(){

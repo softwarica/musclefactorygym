@@ -118,7 +118,7 @@ public function removeMember(){
 				$filename=$row->image;
 				
 				
-				$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/members/'.$filename;
+				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/members/'.$filename;
 				unlink($path);
 			
 		}
@@ -163,7 +163,7 @@ $this->load->model('modelAdmin');
 $this->modelAdmin->updateMember($id,$mname,$address,$email,$contact,$uname,$pword,$dob,$weight,$ftheight,$heightinch,$jdate,$package,$bmi);
 
 $this->session->set_flashData('update_message','data successfully update');
-redirect('controlAdmin/index');
+redirect(base_url()."controlAdmin/editMember?id=".$id);
 
 // $data['update_message']="data successfully update";
 // $this->load->view('admin/adminPage',$data);
@@ -201,7 +201,7 @@ public function editPicture(){
 		foreach($result->result() as $row){
 				$filename=$row->image;
 						
-				$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/members/'.$filename;
+				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/members/'.$filename;
 				unlink($path);		
 				// $path='C:/xampp/htdocs/muscleFactory/assets/images/members/'.$filename;
 				// unlink($path);

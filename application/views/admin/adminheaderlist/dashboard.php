@@ -5,7 +5,7 @@ font-size: 12px !important;
 </style>
 <div class="container" style="margin-top:10px;">
 
-<ul class="nav navabar-default" style="margin-left:170px;">
+<ul class="nav navabar-default" style="margin-left:250px;">
   <li><a href="<?php echo base_url();?>controlWelcome/goToMemberRegistration" class="btn btn-link">
      <img src="<?php echo base_url();?>assets/images/logo/register.png" class="img-responsive" style="height:50px;margin-left:25px;"/>
      <h4 style="color:#337ab7">Member register</h4>
@@ -16,7 +16,7 @@ font-size: 12px !important;
   </a></li>
 
   <li><a href="<?php echo base_url();?>controlExercise/getCategory" class="btn btn-link">
-     <img src="<?php echo base_url();?>assets/images/logo/exercise.png" class="img-responsive" style="height:50px;"/>
+     <img src="<?php echo base_url();?>assets/images/logo/manage.png" class="img-responsive" style="height:50px;"/>
      <h4 style="color:#337ab7">Exercise</h4>
   </a></li>
    <li><a href="<?php echo base_url();?>controlImage/getCategory" class="btn btn-link">
@@ -24,7 +24,7 @@ font-size: 12px !important;
      <h4 style="color:#337ab7">images</h4>
   </a></li>
   <li><a href="<?php echo base_url();?>controlVideo/getCategory" class="btn btn-link">
-     <img src="<?php echo base_url();?>assets/images/logo/exercise.png" class="img-responsive" style="height:50px;"/>
+     <img src="<?php echo base_url();?>assets/images/logo/equip.png" class="img-responsive" style="height:50px;"/>
      <h4 style="color:#337ab7">videos</h4>
   </a></li>
 

@@ -220,69 +220,7 @@ color:white !important;
 			              </div>
 	                  </div>
 			     </a>
-			   <!--   //another video -->
-			   <!-- 	<div class="col-md-6 "><a href="<?php echo base_url();?>controlVideo/getVideo">
-	 	    		<ul class="spinning">
-	 	    			<li class="live">click <span class="m_1">for more</span></li>
-	 	    			<li class="room">hudd hud dabang</li>
-	 	    			<div class="clear"></div>
-	 	    		</ul>
-					 <div class="view view-fifth card"> -->
-				  	   <!-- <img src="<?php echo base_url();?>assets/images/pic3.jpg" class="img-responsive" alt=""> -->
-
-				  	  <!--  ============================================ -->
-
-				  	  <!-- 	<video  width="" height="350" controls>
-							  <source src="<?php echo base_url();?>assets/videos/video2.mp4" type="video/mp4"> -->
-							<!--   <source src="<?php echo base_url();?>assets/videos/myvideo1.ogg" type="video/ogg">
-							  <source src="<?php echo base_url();?>assets/videos/myvideo1.webm" type="video/webm">
-							  <object data="<?php echo base_url();?>assets/videos/myvideo1.mp4"  height="350">
-							    <embed src="<?php echo base_url();?>assets/videos/myvideo1.swf"  height="350">
-							  </object>  -->
-							 <!--  Your browser does not support the video tag.
-							</video> -->
-
-						<!-- <canvas id="myCanvas" style="border:0px solid #FFF;"> 
-						</canvas>  -->
-
-				  	<!--    ============================================ -->
-					     <!--  <div class="mask">
-	                       	<div class="info">view More</div>
-			              </div>
-	                  </div>
-			     </a></div> -->
-
-
-<!-- ........................................................ -->
-
-
-
-				<!--  <div class="col-md-4"><a href="pricing.html">
-	 	    		<ul class="spinning">
-	 	    			<li class="live">live <span class="m_1">Gym</span></li>
-	 	    			<li class="room">Room 1</li>
-	 	    			<div class="clear"></div>
-	 	    		</ul>
-					 <div class="view view-fifth">
-				  	   <img src="<?php echo base_url();?>assets/images/pic2.jpg" class="img-responsive" alt="">
-					      <div class="mask">
-	                       	<div class="info">Read More</div>
-			              </div>
-	                  </div>
-			     </a></div> -->
-				<!--  <div class="col-md-4"><a href="pricing.html">
-	 	    		<ul class="spinning">
-	 	    			<li class="live">live <span class="m_1">Pilates</span></li>
-	 	    			<li class="room">Room 4</li>
-	 	    			<div class="clear"></div>
-	 	    		</ul>
-					 <div class="view view-fifth">
-				  	   <img src="<?php echo base_url();?>assets/images/pic1.jpg" class="img-responsive" alt="">
-					      <div class="mask">
-	                       	<div class="info">Read More</div>
-			              </div>
-	                  </div>
-			     </a></div> -->
+			 
 				<div class="clear"></div>
 		   </div>
 		   <div class="col-lg-4 ">
@@ -316,109 +254,7 @@ color:white !important;
 
 					}
 		  ?>
-		     	 	<!--   <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>Spinning</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	 	  <!-- <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>Pilates</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	 	  <!--  <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>Boxing</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	<!--  	</div> -->
-
-		     	 <!-- 	<div class="cardio_list1"> -->
-		     	 	  <!-- <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>Aerobics</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	 	  <!-- <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>Kik Boxing</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	 	<!--   <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>CrossFit</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	 	 <!--   <div class="cardio_sublist">
-			     	 	<ul class="cardio">
-			     	 		<li><i class="clock"> </i><span>Yoga</span></li>
-			     	 	</ul>
-			     	 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-			     	 	<div class="clear"></div>
-		     	 	  </div> -->
-		     	 <!-- 	</div> -->
-		     	 <!-- 	<div class="clear"></div> -->
+		     	 	
 		     	 </div>
 				</div>
 				<div class="col-md-4 ">
@@ -433,34 +269,36 @@ color:white !important;
 			    </div>
 			    <div class="clear"></div>
 		   </div>
-		  <!-- end content-middle -->
-		
-
-						
-		<!--    <div class="row about">
-		      
-				
-				
-			</div> -->
+		 
 			
 		    <div class="row content_middle_bottom">
 			  <div class="col-md-4 ">
 		        <h3 class="m_2 card">Our Trainers</h3>
 		         <div class="course_demo">
 		          <ul id="flexiselDemo3">
-					<li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
-						<h3>Lorem Ipsum<br><span class="m_text">Spinning</span></h3>
-						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
-						<div class="coursel_list">
+		          <?php
+				if($trainer->num_rows()>0){
+					foreach($trainer->result() as $row){
+						?>
+
+					<li><img src="<?php echo base_url();?>assets/images/trainers/<?php echo $row->image;?>"><div class="desc">
+						<h3><?php echo $row->tname;?><br><span class="m_text"><?php echo $row->address;?></span></h3>
+						<p><?php echo $row->contact;?><br></p><?php echo $row->email;?></p>
+						<div class="coursel_list col-lg-offset-4">
 							<i class="heart1"> </i>
 							<i class="like"> </i>
 						</div>
-						<div class="coursel_list1">
+						<!-- <div class="coursel_list1">
 							<i class="twt"> </i>
 							<i class="fb"> </i>
-						</div>
+						</div> -->
 						<div class="clear"></div>
 					</div></li>
+					<?php
+					}
+				}
+		          ?>
+					<!-- 
 					<li><img src="<?php echo base_url();?>assets/images/pic5.jpg"><div class="desc">
 						<h3>Lorem Ipsum<br><span class="m_text">Kik Boxing</span></h3>
 						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
@@ -473,8 +311,8 @@ color:white !important;
 							<i class="fb"> </i>
 						</div>
 						<div class="clear"></div>
-					</div></li>
-					<li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
+					</div></li> -->
+					<!-- <li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
 						<h3>Lorem Ipsum<br><span class="m_text">Spinning</span></h3>
 						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
 						<div class="coursel_list">
@@ -486,8 +324,8 @@ color:white !important;
 							<i class="fb"> </i>
 						</div>
 						<div class="clear"></div>
-					</div></li>
-					<li><img src="<?php echo base_url();?>assets/images/pic5.jpg"><div class="desc">
+					</div></li> -->
+				<!-- 	<li><img src="<?php echo base_url();?>assets/images/pic5.jpg"><div class="desc">
 						<h3>Lorem Ipsum<br><span class="m_text">Kik Boxing</span></h3>
 						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
 						<div class="coursel_list">
@@ -499,8 +337,8 @@ color:white !important;
 							<i class="fb"> </i>
 						</div>
 						<div class="clear"></div>
-					</div></li>
-					<li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
+					</div></li> -->
+				<!-- 	<li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
 						<h3>Lorem Ipsum<br><span class="m_text">Spinning</span></h3>
 						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
 						<div class="coursel_list">
@@ -512,8 +350,11 @@ color:white !important;
 							<i class="fb"> </i>
 						</div>
 						<div class="clear"></div>
-					</div></li>
+					</div></li> -->
 				</ul>
+
+				<!-- ............................................................ -->
+				<!-- this javascript is for our trainer div -->
 				<script type="text/javascript">
 			$(window).load(function() {
 				$("#flexiselDemo3").flexisel({
@@ -541,6 +382,7 @@ color:white !important;
 
 			});
 		</script>
+	<!-- ............................................................ -->
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.flexisel.js"></script>
 	  </div>
      </div>
@@ -549,8 +391,7 @@ color:white !important;
      <div class="col-md-8" >
      <div class="card">
      	 <a href="<?php echo base_url();?>controlExercise/getExercise"><h3 class="m_2">Exercises</h3></a>
-     	
-
+     	 </div>
      	 <div class="col-lg-6 " >
      	 	<div class="event-bottom card" style="background:#72d0f4">
 	     	 	<ul class="event1">
@@ -664,10 +505,12 @@ color:white !important;
 	     	 	</ul>
      	 		<div class="clear"></div>
      	 	</div>
+     	 	  <a href="<?php echo base_url();?>controlExercise/getAbsExercise"><h5 class="m_2">click here for abs exercises</h5></a>
      	 </div>
      	 
-     </div>
-     </div>
+    
+           </div>
+
 
 
 <!--      ...................... -->
@@ -675,65 +518,74 @@ color:white !important;
      <div class="clear"></div>
      </div>
       <div class="row about">
-		 <div class="col-md-8">
-		     	 <h3 class="m_2">Gallery</h3>
-		     	 <div id="ca-container" class="ca-container">
+		 <div class="col-md-12">
+		     	 <h3 class="m_2 card">Gallery</h3>
+		     	 <div id="ca-container" class="ca-container card">
 				    <div class="ca-wrapper">
+				    <?php
+				    if($image->num_rows()>0){
+				    	foreach($image->result() as $row){
+				    		?>
+
 				         <div class="ca-item ca-item-1">
 						   <div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon1"> </div>
+								<div><a href="#"><img src="<?php echo base_url();?>assets/images/<?php echo $row->image?>" alt="" class="img-responsive"></a> </div>
+								<!-- <div> <img src="<?php echo base_url();?>assets/images/triceps.gif" alt=""></div> -->
 							</div>
 						  </div>
-						<div class="ca-item ca-item-2">
+						  	<?php
+				    	}
+				    }
+				    	?>
+						<!-- <div class="ca-item ca-item-2">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon2"> </div>
 							</div>
-						</div>
-						<div class="ca-item ca-item-3">
+						</div> -->
+						<!-- <div class="ca-item ca-item-3">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon3"> </div>
 							</div>
-						</div>
-						<div class="ca-item ca-item-4">
+						</div> -->
+						<!-- <div class="ca-item ca-item-4">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon4"> </div>
 						     </div>
-						</div>
-						<div class="ca-item ca-item-5">
+						</div> -->
+						<!-- <div class="ca-item ca-item-5">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon5"> </div>
 							</div>
-						</div>
-						<div class="ca-item ca-item-6">
+						</div> -->
+						<!-- <div class="ca-item ca-item-6">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon6"> </div>
 							</div>
-						</div>
-						<div class="ca-item ca-item-7">
+						</div> -->
+					<!-- 	<div class="ca-item ca-item-7">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon7"> </div>
 							</div>
-						</div>
-						<div class="ca-item ca-item-8">
+						</div> -->
+					<!-- 	<div class="ca-item ca-item-8">
 							<div class="ca-item-main">
 								<div class="ca-icon"> </div>
 								<div class="ca-icon"> </div>
 							</div>
-						</div>
+						</div> -->
 			    </div>
 			 </div>
 				    <script type="text/javascript">
 						$('#ca-container').contentcarousel();
 					</script>
 		   </div>
-		   <div class="col-md-4">
+		  <!--  <div class="col-md-4">
 		   	 <h3 class="m_2">Partner</h3>
 			  <ul class="partner">
 			  	<li><img src="<?php echo base_url();?>assets/images/p6.png" alt=""></li>
@@ -744,7 +596,7 @@ color:white !important;
 			  	<li><img src="<?php echo base_url();?>assets/images/p1.png" alt=""></li>
 			  	 <div class="clear"></div>
 			  </ul>
-		   </div>
+		   </div> -->
 	       <div class="clear"></div>
 	      </div>
 	     </div>
@@ -769,76 +621,7 @@ color:white !important;
 		    </div>
 		 </div>
 
-		 <!-- <div class="footer-top">
-		 	<ul class="twitter_footer">
-		 	 <li>
-		 	   <i class="twt_icon"> </i><p>aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel  <span class="m_6">2 days ago</span></p>
-		 	   <div class="clear"></div>
-		 	 </li>
-		 	</ul>
-		 </div>
-		 <div class="footer-bottom">
-		   <div class="container">
-		 	 <div class="row section group">
-				<div class="col-md-4">
-				   <h4 class="m_7">Newsletter Signup</h4>
-				   <p class="m_8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy.</p>
-				      <form class="subscribe">
-			             <input type="text" value="Insert Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Insert Email';}">
-					  </form>
-			          <div class="subscribe1">
-			            <a href="#">Submit Email<i class="but_arrow"> </i></a>
-			          </div>
-				</div>
-				<div class="col-md-4">
-					<div class="f-logo">
-						<img src="<?php echo base_url();?>assets/images/logo.png" alt="">
-					</div>
-					<p class="m_9">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis</p>
-					<p class="address">Phone : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">(00) 222 666 444</span></p>
-					<p class="address">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">info[at]mycompany.com</span></p>
-				</div>
-				<div class="col-md-4">
-					<ul class="list">
-						<h4 class="m_7">Menu</h4>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Trainers</a></li>
-						<li><a href="#">Classes</a></li>
-						<li><a href="#">Pricing</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-					<ul class="list1">
-						<h4 class="m_7">Community</h4>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Forum</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Newsletter</a></li>
-					</ul>
-				</div>
-				<div class="clear"></div>
-	  		  </div>
-		 	</div>
-		 </div>
-		 <div class="copyright">
-		  <div class="container">
-		    <div class="copy">
-		        <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
-		    </div>
-		    <div class="social">
-			   <ul>
-				  <li class="facebook"><a href="#"><span> </span></a></li>
-				  <li class="twitter"><a href="#"><span> </span></a></li>
-				  <li class="pinterest"><a href="#"><span> </span></a></li>
-				  <li class="google"><a href="#"><span> </span></a></li>
-				  <li class="tumblr"><a href="#"><span> </span></a></li>
-				  <li class="instagram"><a href="#"><span> </span></a></li>
-				  <li class="rss"><a href="#"><span> </span></a></li>
-			   </ul>
-		    </div>
-		   <div class="clear"></div>
-		  </div>
-	     </div> -->
+		
 <?php include('footer.php'); ?>
 </body></html>
 

@@ -66,7 +66,7 @@ if(!isset($this->session->userdata['sess_id'])) {
                   <?php 
                   
                   echo $this->session->flashdata('delete_message');
-                  echo $this->session->flashdata('update_message');
+                 
                   
                  
                  

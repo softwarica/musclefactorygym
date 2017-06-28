@@ -46,10 +46,10 @@ class ControlExercise extends CI_Controller{
 			// $this->load->view('admin/adminPage',$data);
 			if(isset($_POST['btntreqsubmit'])){
 			$this->session->set_flashdata('eqinsertmsg','data sucessfully insert into table exercise');
-			redirect('controlWelcome/goToTrainer');
+			redirect('controlTrainer/getCategory');
 		}else{
 			$this->session->set_flashdata('eqinsertmsg','data sucessfully insert into table exercise');
-			redirect('controlWelcome/goToExerciseRegistration');
+			redirect('controlExercise/getCategory');
 		}
 				}
 
@@ -171,7 +171,7 @@ class ControlExercise extends CI_Controller{
 
 				// 		$path='C:/xampp/htdocs/muscleFactory/assets/images/exercises/'.$filename;
 				// unlink($path);
-					$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/exercises/'.$filename;
+					$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/exercises/'.$filename;
 				unlink($path);	
 			
 
@@ -191,7 +191,8 @@ class ControlExercise extends CI_Controller{
 
   redirect('controlWelcome/goToTrainer');
 }else{
-	redirect('controlAdmin/index');}
+	redirect('controlAdmin/index');
+}
 
 	// $data['image_update']='image sucessfull update';
 	// $this->load->view('admin/adminPage',$data);

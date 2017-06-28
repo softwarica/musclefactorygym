@@ -8,7 +8,13 @@ class ModelWelcome extends CI_Model{
   $result=$this->db->get("tblregister");
   return $result;
 }
+public function retriveTrainer(){
+	return $this->db->get('tbltrainer');
+}
+	public function retriveImage(){
 
+			return $this->db->get('tblimage');
+		}
 		
 
 }

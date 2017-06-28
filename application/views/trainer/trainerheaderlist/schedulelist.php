@@ -43,6 +43,7 @@ if($schedulelist->num_rows() > 0)
 
 			<td><?php echo $row->day6; ?></td>
 			<td><?php echo $row->cat6; ?></td>
+			<td><a onclick="return confirm('Do you want to delete?')" href="<?php echo base_url();?>controlSchedule/removeSchedule?id=<?php echo $row->mid; ?>">delete</a></td>
 			<td><a href="<?php echo base_url();?>controlSchedule/editSchedule?id=<?php echo $row->mid; ?>">edit</a></td>
 
 		</tr>

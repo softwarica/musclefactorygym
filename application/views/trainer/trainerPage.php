@@ -43,13 +43,13 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
                   echo $this->session->flashdata('delete_message');
                   echo $this->session->flashdata('update_message');
                   echo $this->session->flashdata('updtmsg');
-                  echo $this->session->flashdata('eqinsertmsg');
+                  // echo $this->session->flashdata('eqinsertmsg');
                   echo $this->session->flashdata('vdoinsertmsg');
                   echo $this->session->flashdata('delexmsg');
                   echo $this->session->flashdata('image_update');
                   echo $this->session->flashdata('video_update');
                   echo $this->session->flashdata('exercise_update');
-                  echo $this->session->flashdata('dietinsertmsg');
+                  echo $this->session->flashdata('delschmsg');
                   echo $this->session->flashdata('dietdeletemsg');
                    ?>
                      

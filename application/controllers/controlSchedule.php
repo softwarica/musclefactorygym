@@ -187,9 +187,17 @@ class ControlSchedule extends CI_COntroller{
 			$day6,$cat6,$ename1cat6,$ename2cat6,$ename3cat6,$ename4cat6,$ename5cat6,$ename6cat6,
 			$day7,$cat7,$ename1cat7,$ename2cat7,$ename3cat7,$ename4cat7,$ename5cat7,$ename6cat7);
 
-		$this->session->set_flashData('updtmsg','data sucessfully update in table schedule');
-		redirect('controlWelcome/goToTrainer');
+		$this->session->set_flashData('updschtmsg','data sucessfully update in table schedule');
+		redirect(base_url()."controlSchedule/editSchedule?id=".$mid);
 	}
+public function removeSchedule(){
+	$mid=$this->input->get('id');
+	$this->load->model('modelSchedule');
+	$this->modelSchedule->deleteSchedule($mid);
+
+		$this->session->set_flashdata('delschmsg','schedule sucessfully delete from table schedule');
+			redirect('controlWelcome/goToTrainer');
+}
 
 }
 

@@ -23,10 +23,14 @@ class ControlWelcome extends CI_Controller {
 		$this->load->model('modelWelcome');
 		$result=$this->modelWelcome->retriveClass();
 		$resultmember=$this->modelWelcome->retriveMember();
+		$resulttrainer=$this->modelWelcome->retriveTrainer();
+		$resultimage=$this->modelWelcome->retriveImage();
 		
 		
 		$data['class']=$result;
 		$data['mid']=$resultmember;
+		$data['trainer']=$resulttrainer;
+		$data['image']=$resultimage;
 		$this->load->view('index',$data);
 	}
 	public function goToBmiTable()
@@ -49,15 +53,15 @@ class ControlWelcome extends CI_Controller {
 	public function goToTrainerRegistration(){
 		$this->load->view('admin/adminaction/trainerregister');
 	}
-	public function goToExerciseRegistration(){
-		$this->load->view('admin/adminaction/adminexercise');
-	}
-	public function goToImageRegistration(){
-		$this->load->view('admin/adminaction/adminimages');
-	}
-	public function goToVideoRegistration(){
-		$this->load->view('admin/adminaction/adminvideos');
-	}
+	// public function goToExerciseRegistration(){
+	// 	$this->load->view('admin/adminaction/adminexercise');
+	// }
+	// public function goToImageRegistration(){
+	// 	$this->load->view('admin/adminaction/adminimages');
+	// }
+	// public function goToVideoRegistration(){
+	// 	$this->load->view('admin/adminaction/adminvideos');
+	// }
 	// public function goToTrainerExerciseRegistration(){
 	// 	$this->load->view('trainer/traineraction/trainerexercise');
 	// }

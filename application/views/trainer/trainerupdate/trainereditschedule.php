@@ -11,7 +11,7 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
 <div class="panel panel-default" style="margin-top:10px">
   <div class="panel panel-heading">
 <h5 align="center" class="btn btn-link">Schedule form:
- 
+ <span style="color:red"><?php     echo $this->session->flashdata('updschtmsg');?></span>
 </h5>
 
   </div>

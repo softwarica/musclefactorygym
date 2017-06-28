@@ -175,6 +175,10 @@ class ModelSchedule extends CI_Model{
 		$this->db->update('tblschedule',$arr);
 
 	}
+	public function deleteSchedule($mid){
+			$this->db->where('mid',$mid);
+			$this->db->delete('tblschedule');
+		}
 
 }
 ?>

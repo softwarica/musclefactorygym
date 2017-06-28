@@ -49,7 +49,7 @@ class ControlImage extends CI_Controller{
 	$this->modelImage->saveImage($iname,$icat,$image);
 
 	$this->session->set_flashdata('imginsertmsg','data sucessfully insert in image table');
-	redirect('controlWelcome/goToImageRegistration');
+	redirect('controlImage/getCategory');
 
 
 
@@ -97,7 +97,7 @@ class ControlImage extends CI_Controller{
 
 				// 		$path='C:/xampp/htdocs/muscleFactory/assets/images/'.$filename;
 				// unlink($path);
-				$path=$_SERVER['DOCUMENT_ROOT'].'/muscleFactory/assets/images/'.$filename;
+				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/'.$filename;
 				unlink($path);	
 
 			

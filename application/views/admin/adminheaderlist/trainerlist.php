@@ -9,7 +9,7 @@
 <table class="table" style="font-size: 12px;">
   <tr>
     <th>Trainer ID</th><th>Trainer name</th><th>Trainer picture</th><th>Trainer address</th><th>Trainer email</th>
-    <th>Trainer username</th><th>Trainer password</th>><th>Trainer contact</th><th>date of birth</th><th>joinDate</th><th>package ID</th><th>actions</th>
+    <th>Trainer username</th><th>Trainer password</th><th>Trainer contact</th><th>date of birth</th><th>joinDate</th><th>package ID</th><th>actions</th>
   </tr>
   <?php
  

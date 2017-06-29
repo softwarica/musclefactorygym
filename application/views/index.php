@@ -237,14 +237,14 @@ color:white !important;
 			     	 		<li><i class="clock"> </i><span><?php echo $row->cname;?></span></li>
 			     	 	</ul>
 			     	 	
-			     	 	<div class="social-media">
+			     	 <!-- 	<div class="social-media">
 						     <ul>
 						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
 						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
 						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
 						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
 						    </ul>
-					   </div>
+					   </div> -->
 			     	 	<div class="clear"></div>
 		     	
  	 </div>
@@ -288,69 +288,14 @@ color:white !important;
 							<i class="heart1"> </i>
 							<i class="like"> </i>
 						</div>
-						<!-- <div class="coursel_list1">
-							<i class="twt"> </i>
-							<i class="fb"> </i>
-						</div> -->
+				
 						<div class="clear"></div>
 					</div></li>
 					<?php
 					}
 				}
 		          ?>
-					<!-- 
-					<li><img src="<?php echo base_url();?>assets/images/pic5.jpg"><div class="desc">
-						<h3>Lorem Ipsum<br><span class="m_text">Kik Boxing</span></h3>
-						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
-						<div class="coursel_list">
-							<i class="heart2"> </i>
-							<i class="like1"> </i>
-						</div>
-						<div class="coursel_list1">
-							<i class="twt"> </i>
-							<i class="fb"> </i>
-						</div>
-						<div class="clear"></div>
-					</div></li> -->
-					<!-- <li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
-						<h3>Lorem Ipsum<br><span class="m_text">Spinning</span></h3>
-						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
-						<div class="coursel_list">
-							<i class="heart2"> </i>
-							<i class="like1"> </i>
-						</div>
-						<div class="coursel_list1">
-							<i class="twt"> </i>
-							<i class="fb"> </i>
-						</div>
-						<div class="clear"></div>
-					</div></li> -->
-				<!-- 	<li><img src="<?php echo base_url();?>assets/images/pic5.jpg"><div class="desc">
-						<h3>Lorem Ipsum<br><span class="m_text">Kik Boxing</span></h3>
-						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
-						<div class="coursel_list">
-							<i class="heart2"> </i>
-							<i class="like1"> </i>
-						</div>
-						<div class="coursel_list1">
-							<i class="twt"> </i>
-							<i class="fb"> </i>
-						</div>
-						<div class="clear"></div>
-					</div></li> -->
-				<!-- 	<li><img src="<?php echo base_url();?>assets/images/pic4.jpg"><div class="desc">
-						<h3>Lorem Ipsum<br><span class="m_text">Spinning</span></h3>
-						<p>Lorem ipsum dolor<br> sit amet, consectetuer.</p>
-						<div class="coursel_list">
-							<i class="heart2"> </i>
-							<i class="like1"> </i>
-						</div>
-						<div class="coursel_list1">
-							<i class="twt"> </i>
-							<i class="fb"> </i>
-						</div>
-						<div class="clear"></div>
-					</div></li> -->
+				
 				</ul>
 
 				<!-- ............................................................ -->
@@ -510,18 +455,19 @@ color:white !important;
      	 
     
            </div>
-
+<div class="clear"></div>
+     </div>
 
 
 <!--      ...................... -->
-   
-     <div class="clear"></div>
-     </div>
       <div class="row about">
 		 <div class="col-md-12">
-		     	 <h3 class="m_2 card">Gallery</h3>
-		     	 <div id="ca-container" class="ca-container card">
+		     	 <div class="card">
+     	 <a href="<?php echo base_url();?>controlImage/getImage">
+     	 <h3 class="m_2">Gallery</h3></a></div>
+		     	 <div id="ca-container" class="ca-container card" style="height:180px;">
 				    <div class="ca-wrapper">
+
 				    <?php
 				    if($image->num_rows()>0){
 				    	foreach($image->result() as $row){
@@ -529,7 +475,7 @@ color:white !important;
 
 				         <div class="ca-item ca-item-1">
 						   <div class="ca-item-main">
-								<div><a href="#"><img src="<?php echo base_url();?>assets/images/<?php echo $row->image?>" alt="" class="img-responsive"></a> </div>
+								<img src="<?php echo base_url();?>assets/images/<?php echo $row->image?>" alt="" class="img-responsive">
 								<!-- <div> <img src="<?php echo base_url();?>assets/images/triceps.gif" alt=""></div> -->
 							</div>
 						  </div>
@@ -537,72 +483,18 @@ color:white !important;
 				    	}
 				    }
 				    	?>
-						<!-- <div class="ca-item ca-item-2">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon2"> </div>
-							</div>
-						</div> -->
-						<!-- <div class="ca-item ca-item-3">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon3"> </div>
-							</div>
-						</div> -->
-						<!-- <div class="ca-item ca-item-4">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon4"> </div>
-						     </div>
-						</div> -->
-						<!-- <div class="ca-item ca-item-5">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon5"> </div>
-							</div>
-						</div> -->
-						<!-- <div class="ca-item ca-item-6">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon6"> </div>
-							</div>
-						</div> -->
-					<!-- 	<div class="ca-item ca-item-7">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon7"> </div>
-							</div>
-						</div> -->
-					<!-- 	<div class="ca-item ca-item-8">
-							<div class="ca-item-main">
-								<div class="ca-icon"> </div>
-								<div class="ca-icon"> </div>
-							</div>
-						</div> -->
 			    </div>
 			 </div>
 				    <script type="text/javascript">
 						$('#ca-container').contentcarousel();
 					</script>
 		   </div>
-		  <!--  <div class="col-md-4">
-		   	 <h3 class="m_2">Partner</h3>
-			  <ul class="partner">
-			  	<li><img src="<?php echo base_url();?>assets/images/p6.png" alt=""></li>
-			  	<li><img src="<?php echo base_url();?>assets/images/p5.png" alt=""></li>
-			  	<li><img src="<?php echo base_url();?>assets/images/p4.png" alt=""></li>
-			  	<li><img src="<?php echo base_url();?>assets/images/p3.png" alt=""></li>
-			  	<li><img src="<?php echo base_url();?>assets/images/p2.png" alt=""></li>
-			  	<li><img src="<?php echo base_url();?>assets/images/p1.png" alt=""></li>
-			  	 <div class="clear"></div>
-			  </ul>
-		   </div> -->
 	       <div class="clear"></div>
 	      </div>
 	     </div>
-
-
 		</div>
+
+
 	    <div class="map">
 			<iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2&amp;output=embed"> </iframe><br><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2" style="color:#666;font-size:12px;text-align:left"> </a></small>
 			<div class="opening_hours">

@@ -64,9 +64,7 @@ class ControlVideo extends CI_controller{
 
 		
 		public function editVideo(){
-	if(isset($_POST['btnsubmitvideo'])){
-
-	$config['upload_path']="assets/images/exercises";
+	$config['upload_path']="assets/videos";
 		$config['allowed_types']  = 'mp4';
 	
 
@@ -88,59 +86,6 @@ class ControlVideo extends CI_controller{
 						$result=$this->modelVideo->retriveVideoById($id);
 	if($result->num_rows() > 0){
 		foreach($result->result() as $row){
-				$filename=$row->eqvideo;
-
-				// 		$path='C:/xampp/htdocs/muscleFactory/assets/images/exercises/'.$filename;
-				// unlink($path);
-				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/exercises/'.$filename;
-				unlink($path);	
-			
-
-			
-		}
-	}
-// ............................
-
-	$video=$data['upload_data']['file_name'];
-
-	
-	$this->modelVideo->updateVideo($id,$video);
-
-	// $result=$this->modelAdmin->retriveMemberById($id);
-	$this->session->set_flashData('video_update','video sucessfully update');
-	if(!isset($this->session->userdata['sess_id'])) {
-
-  redirect('controlWelcome/goToTrainer');
-}else{
-	redirect('controlAdmin/index');}
-
-
-	// $data['image_update']='image sucessfull update';
-	// $this->load->view('admin/adminPage',$data);
-}else if (isset($_POST['btnsubmitvideodetail'])){
-
-	$config['upload_path']="assets/videos";
-		$config['allowed_types']  = 'mp4';
-	
-
-		$this->load->library('upload',$config);
-		 if ( ! $this->upload->do_upload('video'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        print_r($error);
-                        die();
-                }
-		// $this->upload->do_upload('video');
-		$data=array('upload_data'=>$this->upload->data());
-		
-		$this->load->model('modelVideo');
-		
-// for delete of image
-	$id=$this->input->post('id');
-						$result=$this->modelVideo->retriveTblVideoById($id);
-	if($result->num_rows() > 0){
-		foreach($result->result() as $row){
 				$filename=$row->video;
 
 				// 		$path='C:/xampp/htdocs/muscleFactory/assets/videos/'.$filename;
@@ -156,28 +101,25 @@ class ControlVideo extends CI_controller{
 	$video=$data['upload_data']['file_name'];
 
 	
-	$this->modelVideo->updateTblVideo($id,$video);
+	$this->modelVideo->updateVideo($id,$video);
 
 	// $result=$this->modelAdmin->retriveMemberById($id);
 	$this->session->set_flashData('video_update','video sucessfully update');
 	redirect('controlAdmin/index');
 
-	// $data['image_update']='image sucessfull update';
-	// $this->load->view('admin/adminPage',$data);
-}
 }
 		
-		public function getChestVideo(){
-			$id=$this->input->get('id');
+		// public function getChestVideo(){
+		// 	$id=$this->input->get('id');
 			
-			$this->load->model('modelVideo');
-			$result=$this->modelVideo->retriveChestVideo($id);
+		// 	$this->load->model('modelVideo');
+		// 	$result=$this->modelVideo->retriveChestVideo($id);
 
-			$data['exvideos']=$result;
+		// 	$data['exvideos']=$result;
 			
 
-			$this->load->view('exerciseVideo',$data);
-		}
+		// 	$this->load->view('exerciseVideo',$data);
+		// }
 
 		public function getVideoList(){
 			$this->load->model('modelVideo');
@@ -190,6 +132,17 @@ class ControlVideo extends CI_controller{
 		public function removeVideo(){
 				$id=$this->input->get('id');
 	$this->load->model('modelVideo');
+$result=$this->modelVideo->retriveVideoById($id);
+				if($result->num_rows() > 0){
+					foreach($result->result() as $row){
+			
+				$videoname=$row->video;
+				$videopath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/videos/'.$videoname;
+				unlink($videopath);
+			
+		}
+	}
+
 	$this->modelVideo->deleteVideo($id);
 
 		$this->session->set_flashdata('delvdomsg','video sucessfully delete from table video');
@@ -219,7 +172,7 @@ public function updateEditedVideoDEtails(){
 	$this->modelVideo->updateVideoDetails($id,$vname,$vcat);
 
 	$this->session->set_flashData('video_dtl_update','video details sucessfully update');
-	redirect('controlAdmin/index');
+redirect(base_url()."controlVideo/editVideoDetails?id=".$id);
 }
 
 }

@@ -43,7 +43,6 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
                   echo $this->session->flashdata('delete_message');
                   echo $this->session->flashdata('update_message');
                   echo $this->session->flashdata('updtmsg');
-                  // echo $this->session->flashdata('eqinsertmsg');
                   echo $this->session->flashdata('vdoinsertmsg');
                   echo $this->session->flashdata('delexmsg');
                   echo $this->session->flashdata('image_update');
@@ -51,6 +50,7 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
                   echo $this->session->flashdata('exercise_update');
                   echo $this->session->flashdata('delschmsg');
                   echo $this->session->flashdata('dietdeletemsg');
+                  echo $this->session->flashdata('tbldiet_update');
                    ?>
                      
                    </h3>

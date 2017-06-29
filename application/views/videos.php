@@ -3,7 +3,7 @@
 
 	<div class="panel panel-default">
 	<div class="panel panel-heading">
-		<h4 class="btn btn-link">Exercises videos</h4>
+		<h4 class="btn btn-link">videos</h4>
 	</div>
 	
 <div class="panel panel-body" style="font-size: 12px;">
@@ -33,10 +33,10 @@ if($exvideos->num_rows() > 0){
 	     	 </div>
 	     	 <div class="col-lg-12">
 	  
-	     	 		<b>Exercise name:</b>
+	     	 		<b>video name:</b>
 	     	 		<p><?php echo $row->vname;?></p>
 	     	 		
-	     	 		<b>Exercise Category:</b>
+	     	 		<b>video Category:</b>
 	     	 		<p><?php echo $row->vcat;?></p>
 	     	 	
 	     	 		</div>

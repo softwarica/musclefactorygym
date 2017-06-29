@@ -96,8 +96,10 @@ class ControlCheck extends CI_Controller{
 						}
 		}
 
+
 		public function getSchedule(){
 			$mid=$this->input->post('mid');
+			$this->session->set_userdata('sess_mid',$mid);
 			$this->load->model('modelCheck');
 			$resultSchedule=$this->modelCheck->retriveScheduleById($mid);
 

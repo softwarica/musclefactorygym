@@ -1,3 +1,9 @@
+<?php
+if(!isset($this->session->userdata['sess_mid'])){
+	redirect('controlWelcome/index');
+}
+?>
+
 <?php include_once('link.php');?>
 <?php include_once('header.php');?>
 <style type="text/css">
@@ -19,12 +25,8 @@
 
   </div>
 <div class="panel panel-body" >
-<div class="table-responsive">
-<table class="table" style="font-size: 12px;">
-  <tr>
-    <th>Member ID</th><th>Member name</th><th>exercise start date</th><th>exercise end date</th>
-  </tr>
- 
+
+
   <?php
  
 if($retriveschedule->num_rows() > 0)
@@ -32,19 +34,14 @@ if($retriveschedule->num_rows() > 0)
 	foreach ($retriveschedule->result() as $row) 
 	{
 		?>
-		<tr>
-			<td><?php echo $row->mid; ?></td>
-			<td><?php echo $row->mname; ?></td>
-			<td><?php echo $row->esdate; ?></td>
-			<td><?php echo $row->eedate; ?></td>
-		</tr>
-
-		
+		<div class="col-lg-12">
+		member id:<b><?php echo $row->mid; ?></b><br/>
+		member name:<b><?php echo $row->mname; ?></b><br/>
+		exercise start date:<b><?php echo $row->esdate; ?></b><br/>
+		exercise end date:<b><?php echo $row->eedate; ?></b>
+		</div>
+<div class="col-lg-12">
 	
-
-
-</table>
-</div>
 
 <div class="col-lg-3" >
 			<div class="card">
@@ -151,7 +148,12 @@ if($retriveschedule->num_rows() > 0)
 
 			</div>
 		</div>
-			<?php
+
+</div>
+
+
+
+	<?php
 	}
 
 }
@@ -162,6 +164,8 @@ else
 <?php
 }
   ?>
+
+	
 </div>
 </div>
 </div>

@@ -10,7 +10,9 @@ if(!isset($this->session->userdata['sess_id'])) {
 <div class="container-fluid">
 <div class="panel panel-default" style="margin-top:10px">
   <div class="panel panel-heading">
-<h5 align="center" class="btn btn-link">edit Image details form</h5>
+<h5 align="center" class="btn btn-link">edit Image details form:
+<span style="color:red"><?php  echo $this->session->flashdata('image_dtl_update');?></span>
+</h5>
 
   </div>
 <div class="panel panel-body" id="menu" style="font-size: 12px;">

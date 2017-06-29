@@ -125,7 +125,7 @@ if(!isset($this->session->userdata['sess_id'])) {
     $(document).ready(function(){
       $('#uname').change(function(){
           var uname=$('#uname').val();
-          alert(uname);
+         
           if(!uname==''){
             $.ajax({
               url:"<?php echo base_url();?>controlCheck/checkUnameAvailability",
@@ -138,6 +138,7 @@ if(!isset($this->session->userdata['sess_id'])) {
 
           });
                 $('#unameresult').html(data);
+                 document.getElementById('uname').focus();
               },
 
             });

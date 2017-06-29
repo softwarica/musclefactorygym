@@ -11,7 +11,7 @@ class ModelCheck extends CI_Model{
 	$this->db->where('uname',$uname);
 	$this->db->where('pword',$pword);
 
-	return $this->db->get('tblregister');
+	return $this->db->get('tbladmin');
 	}
 
 	public function isUnameAvailable($uname){

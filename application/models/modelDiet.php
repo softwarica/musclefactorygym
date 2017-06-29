@@ -25,7 +25,38 @@ class ModelDiet extends CI_Model{
 			$this->db->where('id',$id);
 			$this->db->delete('tbldiet');
 		}
+						
+						public function updateDiet($id,$dname,$dcat,$ddetails){
+				$arr=array(
+				'id'=>$id,
+				'dname'=>$dname,
+				'dcat'=>$dcat,
+				'ddetails'=>$ddetails
+					);
+				$this->db->where('id',$id);
+				$this->db->update('tbldiet',$arr);
 
+				}
+
+	public function updateDietImage($id,$dimage){
+				$arr=array(
+				'id'=>$id,
+				'dimage'=>$dimage
+					);
+				$this->db->where('id',$id);
+				$this->db->update('tbldiet',$arr);
+
+				}
+
+				public function updateDietVideo($id,$dvideo){
+				$arr=array(
+				'id'=>$id,
+				'dvideo'=>$dvideo
+					);
+				$this->db->where('id',$id);
+				$this->db->update('tbldiet',$arr);
+
+				}
 }
 
 ?>

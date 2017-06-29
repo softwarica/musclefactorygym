@@ -17,13 +17,8 @@ class ControlExercise extends CI_Controller{
 			$eqimage=$data['upload_data']['file_name'];
 // ..................
 //for video
-		// 	$configvideo['upload_path']="assets/videos";
-		// $configvideo['allowed_types']  = 'mp4';
-		
 
 		$this->load->library('upload',$config);
-		//$this->upload->do_upload('video');
-
 
 		 if ( ! $this->upload->do_upload('eqvideo'))
                 {
@@ -41,9 +36,6 @@ class ControlExercise extends CI_Controller{
 
 			$this->load->model('modelExercise');
 			$this->modelExercise->saveEquipment($eqname,$eqcat,$eqimage,$eqdetails,$eqvideo);
-
-			// $data['eqinsertmsg']='data sucessfully insert into table equipment';
-			// $this->load->view('admin/adminPage',$data);
 			if(isset($_POST['btntreqsubmit'])){
 			$this->session->set_flashdata('eqinsertmsg','data sucessfully insert into table exercise');
 			redirect('controlTrainer/getCategory');
@@ -79,9 +71,70 @@ class ControlExercise extends CI_Controller{
 			$this->load->model('modelExercise');
 			$result=$this->modelExercise->retriveChestExercise();
 
-				$data['chestexercise']=$result;
-				$this->load->view('chestExercise',$data);
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
 
+		}
+
+		
+		public function getShoulderExercise(){
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveShoulderExercise();
+
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
+
+		}
+		public function getBackExercise(){
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveBackExercise();
+
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
+
+		}
+		public function getBicepsExercise(){
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveBicepsExercise();
+
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
+
+		}
+		public function getTricepsExercise(){
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveTricepsExercise();
+
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
+
+		}
+		public function getLegsExercise(){
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveLegsExercise();
+
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
+
+		}
+		public function getAbsExercise(){
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveAbsExercise();
+
+				$data['exercise']=$result;
+				$this->load->view('exercise',$data);
+
+		}
+		public function getExerciseVideo(){
+			$id=$this->input->get('id');
+			
+			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveExerciseVideo($id);
+
+			$data['exvideos']=$result;
+			
+
+			$this->load->view('exerciseVideo',$data);
 		}
 
 		// public function getChestVideo(){
@@ -102,7 +155,7 @@ class ControlExercise extends CI_Controller{
 			$this->load->model('modelExercise');
 			$result=$this->modelExercise->retriveSearchExercise($forsearch);
 
-			$data['searchdata']=$result;
+			$data['exercise']=$result;
 			$this->load->view('searchExercise',$data);
 
 		}
@@ -118,6 +171,20 @@ class ControlExercise extends CI_Controller{
 		public function removeExercise(){
 			$id=$this->input->get('id');
 			$this->load->model('modelExercise');
+			$result=$this->modelExercise->retriveExerciseById($id);
+				if($result->num_rows() > 0){
+					foreach($result->result() as $row){
+				$imagename=$row->eqimage;
+				$videoname=$row->eqvideo;
+				
+				
+				$imagepath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/exercises/'.$imagename;
+				unlink($imagepath);
+				$videopath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/exercises/'.$videoname;
+				unlink($videopath);
+			
+		}
+	}
 			$this->modelExercise->deleteExercise($id);
 
 			$this->session->set_flashdata('delexmsg','exercise sucessfully delete from table exercise');
@@ -140,9 +207,8 @@ class ControlExercise extends CI_Controller{
 			$this->load->view('admin/adminupdate/editexercise',$data);
 }
 	
-
+//for edit exercise image
 				public function editPicture(){
-	if(isset($_POST['btnsubmitimage'])){
 
 	$config['upload_path']="assets/images/exercises";
 		$config['allowed_types']  = 'gif|jpg|png';
@@ -183,7 +249,7 @@ class ControlExercise extends CI_Controller{
 	$image=$data['upload_data']['file_name'];
 
 	
-	$this->modelExercise->updateImage($id,$image);
+	$this->modelExercise->updateExerciseImage($id,$image);
 
 	// $result=$this->modelAdmin->retriveMemberById($id);
 	$this->session->set_flashData('image_update','image sucessfully update');
@@ -196,11 +262,59 @@ class ControlExercise extends CI_Controller{
 
 	// $data['image_update']='image sucessfull update';
 	// $this->load->view('admin/adminPage',$data);
-}
-
 
 }
 
+
+	//to edit video of exercise
+		public function editVideo(){
+	$config['upload_path']="assets/images/exercises";
+		$config['allowed_types']  = 'mp4';
+	
+
+		$this->load->library('upload',$config);
+		 if ( ! $this->upload->do_upload('video'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        print_r($error);
+                        die();
+                }
+	
+		$data=array('upload_data'=>$this->upload->data());
+		
+		$this->load->model('modelExercise');
+		
+// for delete of video
+	$id=$this->input->post('id');
+						$result=$this->modelExercise->retriveExerciseById($id);
+	if($result->num_rows() > 0){
+		foreach($result->result() as $row){
+				$filename=$row->eqvideo;
+				$path=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/exercises/'.$filename;
+				unlink($path);	
+			
+
+			
+		}
+	}
+// ............................
+
+	$eqvideo=$data['upload_data']['file_name'];
+
+	
+	$this->modelExercise->updateExerciseVideo($id,$eqvideo);
+
+	// $result=$this->modelAdmin->retriveMemberById($id);
+	$this->session->set_flashData('video_update','video sucessfully update');
+	if(!isset($this->session->userdata['sess_id'])) {
+
+  redirect('controlWelcome/goToTrainer');
+}else{
+	redirect('controlAdmin/index');
+	}
+
+}
 public function updateEditedExercise(){
 	$id=$this->input->post('id');
 	$eqname=$this->input->post('eqname');
@@ -211,11 +325,7 @@ public function updateEditedExercise(){
 	$this->modelExercise->updateExercise($id,$eqname,$eqcat,$eqdetails);
 
 	$this->session->set_flashData('exercise_update','exercise sucessfully update');
-	if(!isset($this->session->userdata['sess_id'])) {
-
-  redirect('controlWelcome/goToTrainer');
-}else{
-	redirect('controlAdmin/index');}
+	redirect(base_url()."controlexercise/editExercise?id=".$id);
 }
 
 public function exvdoByExName(){
@@ -223,7 +333,6 @@ public function exvdoByExName(){
 	$this->load->model('modelExercise');
 	$result=$this->modelExercise->retvdoByExName($eqname);
 	$data['exvideos']=$result;
-
 	$this->load->view('exercisevideo',$data);
 
 }

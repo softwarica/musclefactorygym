@@ -33,11 +33,42 @@ class ModelExercise extends CI_Model{
 			return $this->db->get('tblexercise');
 
 		}
-		// public function retriveChestVideo($id){
-		// 	$this->db->where('id',$id);
-		// 	return $this->db->get('tblexercise');
+		public function retriveShoulderExercise(){
+			$this->db->where('eqcat','shoulder');
+			return $this->db->get('tblexercise');
 
-		// }
+		}
+		public function retriveBackExercise(){
+			$this->db->where('eqcat','back');
+			return $this->db->get('tblexercise');
+
+		}
+		public function retriveTricepsExercise(){
+			$this->db->where('eqcat','triceps');
+			return $this->db->get('tblexercise');
+
+		}
+		public function retriveBicepsExercise(){
+			$this->db->where('eqcat','biceps');
+			return $this->db->get('tblexercise');
+
+		}
+	
+		public function retriveLegsExercise(){
+			$this->db->where('eqcat','legs');
+			return $this->db->get('tblexercise');
+
+		}
+		public function retriveAbsExercise(){
+			$this->db->where('eqcat','abs');
+			return $this->db->get('tblexercise');
+
+		}
+		public function retriveExerciseVideo($id){
+			$this->db->where('id',$id);
+			return $this->db->get('tblexercise');
+
+		}
 		public function retriveSearchExercise($forsearch){
 			$this->db->like('eqname',$forsearch);
 			return $this->db->get('tblexercise');
@@ -46,7 +77,7 @@ class ModelExercise extends CI_Model{
 			$this->db->where('id',$id);
 			$this->db->delete('tblexercise');
 		}
-		public function updateImage($id,$image){
+		public function updateExerciseImage($id,$image){
 	$arr=array(
 		'id'=>$id,
 		'eqimage'=>$image
@@ -55,6 +86,14 @@ class ModelExercise extends CI_Model{
 	$this->db->update('tblexercise',$arr);
 }
 
+	public function updateExerciseVideo($id,$eqvideo){
+	$arr=array(
+		'id'=>$id,
+		'eqvideo'=>$eqvideo
+		);
+	$this->db->where('id',$id);
+	$this->db->update('tblexercise',$arr);
+}
 public function updateExercise($id,$eqname,$eqcat,$eqdetails){
 $arr=array(
 'id'=>$id,

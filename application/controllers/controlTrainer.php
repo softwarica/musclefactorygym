@@ -88,6 +88,16 @@ redirect('controlWelcome/goToTrainerRegistration');
 					$id=$this->input->get('id');
 						
 					$this->load->model("modelTrainer");
+					$result=$this->modelTrainer->retriveTrainerById($id);
+				if($result->num_rows() > 0){
+					foreach($result->result() as $row){
+			
+				$imagename=$row->image;
+				$imagepath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/trainers/'.$imagename;
+				unlink($imagepath);
+			
+		}
+	}
 					$this->modelTrainer->deleteTrainer($id);
 
 					$this->session->set_flashData('delete_trainer_message','trainer successfully remove');

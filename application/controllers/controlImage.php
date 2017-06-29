@@ -56,6 +56,8 @@ class ControlImage extends CI_Controller{
 
  }
 
+
+//this is for images at admin page
  	public function getImageList(){
 			
 				$this->load->model('modelImage');
@@ -65,8 +67,17 @@ class ControlImage extends CI_Controller{
 				$this->load->view('admin/adminheaderlist/imagelist',$data);
 		}
 
-	
 
+// this is for gallery of home page
+	public function getImage(){
+					$this->load->model('modelImage');
+					$result=$this->modelImage->retriveImage();
+
+					$data['eximages']=$result;
+					$this->load->view('images',$data);
+				}
+
+//this help to edit image of folder images
 	public function editPicture(){
 	if(isset($_POST['btnsubmitimage'])){
 
@@ -111,13 +122,8 @@ class ControlImage extends CI_Controller{
 
 	
 	$this->modelImage->updateImage($id,$image);
-
-	// $result=$this->modelAdmin->retriveMemberById($id);
 	$this->session->set_flashData('tblimage_update','image sucessfully update');
 	redirect('controlAdmin/index');
-
-	// $data['image_update']='image sucessfull update';
-	// $this->load->view('admin/adminPage',$data);
 }
 
 
@@ -126,6 +132,16 @@ class ControlImage extends CI_Controller{
 public function removeImage(){
 	$id=$this->input->get('id');
 	$this->load->model('modelImage');
+	$result=$this->modelImage->retriveImageById($id);
+				if($result->num_rows() > 0){
+					foreach($result->result() as $row){
+			
+				$imagename=$row->image;
+				$imagepath=$_SERVER['DOCUMENT_ROOT'].'/musclefactorygym/assets/images/'.$imagename;
+				unlink($imagepath);
+			
+		}
+	}
 	$this->modelImage->deleteImage($id);
 
 		$this->session->set_flashdata('delimgmsg','image sucessfully delete from table image');
@@ -155,7 +171,7 @@ public function updateEditedImageDEtails(){
 	$this->modelImage->updateImageDetails($id,$iname,$icat);
 
 	$this->session->set_flashData('image_dtl_update','image details sucessfully update');
-	redirect('controlAdmin/index');
+	redirect(base_url()."controlImage/editImageDetails?id=".$id);
 }
 }
 ?>

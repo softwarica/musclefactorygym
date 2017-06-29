@@ -24,9 +24,12 @@ if($exercise->num_rows() > 0){
      	 	<div class="col-lg-8">
 	     	 	
 	     	 		<!-- <h4>26 April, 2014</h4> -->
-	     	 		<div class="card">
+	     	 		
 	     	 		<img src="<?php echo base_url();?>assets/images/exercises/<?php echo $row->eqimage;?>" alt="" class="img-responsive" >
-	     	 		</div>
+	     	 			<div class="btn2">
+					   <a href="<?php echo base_url();?>controlExercise/getExerciseVideo?id=<?php echo $row->id;?>">click for video</a>
+					</div>
+	     	 		
 	     	 </div>
 	     	 <div class="col-lg-4">
 	     	<!--  	<ul class="event1_text"> -->

@@ -173,5 +173,16 @@ public function updateEditedImageDEtails(){
 	$this->session->set_flashData('image_dtl_update','image details sucessfully update');
 	redirect(base_url()."controlImage/editImageDetails?id=".$id);
 }
+
+public function searchImage(){
+			$forsearch=$this->input->post('forsearch');
+
+			$this->load->model('modelImage');
+			$result=$this->modelImage->retriveSearchImage($forsearch);
+
+			$data['eximages']=$result;
+			$this->load->view('images',$data);
+
+		}
 }
 ?>

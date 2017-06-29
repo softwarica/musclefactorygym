@@ -39,12 +39,12 @@ color:white !important;
 			   <li class="active"><a href="#">Home</a></li>
 			   
 			   <!-- <li><a href="<?php echo base_url();?>controlWelcome/goToLogin">Trainer</a></li> -->
-			   <li><a href="classes.html">Classes</a>
+			   <li><a href="<?php echo base_url();?>controlVideo/getVideo">videos</a>
 
 			   </li>
-			   <li><a href="blog.html">Blog</a></li>
-			   <li><a href="pricing.html">Pricing</a></li>
-			   <li><a href="contact.html">Contact</a></li>
+			   <li><a href="<?php echo base_url();?>controlImage/getImage">images</a></li>
+			   <li><a href="<?php echo base_url();?>controlExercise/getExercise">exercises</a></li>
+			   <li><a href="<?php echo base_url();?>controlDiet/getDiet">diets</a></li>
 			   <li><a href="<?php echo base_url();?>controlWelcome/goToLogin" class="btn btn-success">login</a></li>
 			 </ul>
 			<!--   <script type="text/javascript" src="<?php echo base_url();?>assets/js/nav.js"></script> -->
@@ -185,31 +185,31 @@ color:white !important;
 		    <div class="row content-middle">
 		      <!-- start content-middle -->
 		       
-		      <div class="col-lg-4">
+		      <div class="col-lg-3">
 		       <div class="card">
      	 <a href="<?php echo base_url();?>controlVideo/getVideo">
-     	 <h3 class="m_2">Videos</h3></a></div>
+     	 <h3 class="m_2">click for Videos</h3></a></div>
 
 	 	    	<a href="<?php echo base_url();?>controlVideo/getVideo">
 	 	    		<ul class="spinning">
 	 	    			<li class="live">click <span class="m_1">for more</span></li>
-	 	    			<li class="room">just chill</li>
+	 	    			<li class="room">videos</li>
 	 	    			<div class="clear"></div>
 	 	    		</ul>
 					 <div class="view view-fifth card">
-				  	   <!-- <img src="<?php echo base_url();?>assets/images/pic3.jpg" class="img-responsive" alt=""> -->
+				  	   <img src="<?php echo base_url();?>assets/images/videologo.jpg" class="img-responsive" alt="">
 
 				  	  <!--  ============================================ -->
 
-				  	  	<video  width="auto" height="350" controls>
+				  	 <!--  	<video  width="auto" height="350" controls>
 							  <source src="<?php echo base_url();?>assets/videos/video1.mp4" type="video/mp4">
-							  <!-- <source src="<?php echo base_url();?>assets/videos/video.ogg" type="video/ogg">
+							  <source src="<?php echo base_url();?>assets/videos/video.ogg" type="video/ogg">
 							  <source src="<?php echo base_url();?>assets/videos/video.webm" type="video/webm">
 							  <object data="<?php echo base_url();?>assets/videos/video.mp4"  height="350">
 							    <embed src="<?php echo base_url();?>assets/videos/video.swf"  height="350">
-							  </object>  -->
+							  </object> 
 							  Your browser does not support the video tag.
-							</video>
+							</video> -->
 
 						<!-- <canvas id="myCanvas" style="border:0px solid #FFF;"> 
 						</canvas>  -->
@@ -223,7 +223,45 @@ color:white !important;
 			 
 				<div class="clear"></div>
 		   </div>
-		   <div class="col-lg-4 ">
+		   <div class="col-lg-3">
+		       <div class="card">
+     	 <a href="<?php echo base_url();?>controlDiet/getDiet">
+     	 <h3 class="m_2">click for Diets</h3></a></div>
+
+	 	    	<a href="<?php echo base_url();?>controlDiet/getDiet">
+	 	    		<ul class="spinning">
+	 	    			<li class="live">click <span class="m_1">for more</span></li>
+	 	    			<li class="room">diets</li>
+	 	    			<div class="clear"></div>
+	 	    		</ul>
+					 <div class="view view-fifth card">
+				  	   <img src="<?php echo base_url();?>assets/images/dietslogo.jpg" class="img-responsive" alt="">
+
+				  	  <!--  ============================================ -->
+
+				  	  <!-- 	<video  width="auto" height="350" controls>
+							  <source src="<?php echo base_url();?>assets/videos/video1.mp4" type="video/mp4">
+							  <source src="<?php echo base_url();?>assets/videos/video.ogg" type="video/ogg">
+							  <source src="<?php echo base_url();?>assets/videos/video.webm" type="video/webm">
+							  <object data="<?php echo base_url();?>assets/videos/video.mp4"  height="350">
+							    <embed src="<?php echo base_url();?>assets/videos/video.swf"  height="350">
+							  </object> 
+							  Your browser does not support the video tag.
+							</video> -->
+
+						<!-- <canvas id="myCanvas" style="border:0px solid #FFF;"> 
+						</canvas>  -->
+
+				  	<!--    ============================================ -->
+					      <div class="mask">
+	                       	<div class="info">view More</div>
+			              </div>
+	                  </div>
+			     </a>
+			 
+				<div class="clear"></div>
+		   </div>
+		   <div class="col-lg-3 ">
 		     	 <h3 class="m_2 card">All Classes</h3>
 		     	 <div class="classes">
 		     	 	<!-- <div class="cardio_list"> -->
@@ -257,7 +295,7 @@ color:white !important;
 		     	 	
 		     	 </div>
 				</div>
-				<div class="col-md-4 ">
+				<div class="col-md-3">
 				  <h3 class="m_4 card">Membership Prices</h3>
 				  <div class="members">
 				   <h4 class="m_3">25% Discount of for all members</h4>

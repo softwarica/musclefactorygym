@@ -3,7 +3,11 @@
 
 	<div class="panel panel-default">
 	<div class="panel panel-heading">
-		<h4 class="btn btn-link">Images</h4>
+		<b class="btn btn-link" style="float:left">images</b>
+		<form method="post" action="<?php echo base_url();?>controlImage/searchImage">
+		<input type="text" name="forsearch" placeholder="search..." class="form-control" style="width:500px;float:left;margin-left: 80px;"/>
+		<input type="submit" class="btn btn-success" name="btnsearch" value="search" style="margin-left: 20px;"/>
+		</form>
 	</div>
 	
 <div class="panel panel-body" style="font-size: 12px;">

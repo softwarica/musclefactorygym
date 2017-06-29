@@ -52,7 +52,7 @@ class ControlCheck extends CI_Controller{
 	public function destroySession(){
 		session_destroy();
 		$this->session->set_userdata('sess_id','');
-		redirect('controlWelcome/goToLogin');
+		redirect('controlWelcome/index');
 	}
 
 	public function checkUnameAvailability(){

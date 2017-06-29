@@ -57,6 +57,10 @@ class ModelDiet extends CI_Model{
 				$this->db->update('tbldiet',$arr);
 
 				}
+				public function retriveSearchDiet($forsearch){
+			$this->db->like('dname',$forsearch);
+			return $this->db->get('tbldiet');
+		}
 }
 
 ?>

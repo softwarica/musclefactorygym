@@ -178,7 +178,25 @@ public function editVideo(){
   redirect('controlWelcome/goToTrainer');
 
 }
+public function getDiet(){
+					$this->load->model('modelDiet');
+					$result=$this->modelDiet->retriveDiet();
 
+					$data['diets']=$result;
+					$this->load->view('diets',$data);
+				}
+
+
+public function searchDiet(){
+			$forsearch=$this->input->post('forsearch');
+
+			$this->load->model('modelDiet');
+			$result=$this->modelDiet->retriveSearchDiet($forsearch);
+
+			$data['diets']=$result;
+			$this->load->view('diets',$data);
+
+		}
 }
 
 ?>

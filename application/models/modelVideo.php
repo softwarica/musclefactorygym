@@ -65,5 +65,9 @@ class ModelVideo extends CI_Model{
 			$this->db->update('tblvideo',$arr);
 
 			}
+			public function retriveSearchVideo($forsearch){
+			$this->db->like('vname',$forsearch);
+			return $this->db->get('tblvideo');
+		}
 }
 ?>

@@ -175,6 +175,17 @@ public function updateEditedVideoDEtails(){
 redirect(base_url()."controlVideo/editVideoDetails?id=".$id);
 }
 
+
+public function searchVideo(){
+			$forsearch=$this->input->post('forsearch');
+
+			$this->load->model('modelVideo');
+			$result=$this->modelVideo->retriveSearchVideo($forsearch);
+
+			$data['exvideos']=$result;
+			$this->load->view('Videos',$data);
+
+		}
 }
 
 ?>

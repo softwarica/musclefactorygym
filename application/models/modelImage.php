@@ -45,6 +45,10 @@ $this->db->where('id',$id);
 $this->db->update('tblimage',$arr);
 
 }
+public function retriveSearchImage($forsearch){
+			$this->db->like('iname',$forsearch);
+			return $this->db->get('tblimage');
+		}
 }
 
 ?>

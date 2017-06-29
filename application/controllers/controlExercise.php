@@ -156,7 +156,7 @@ class ControlExercise extends CI_Controller{
 			$result=$this->modelExercise->retriveSearchExercise($forsearch);
 
 			$data['exercise']=$result;
-			$this->load->view('searchExercise',$data);
+			$this->load->view('exercise',$data);
 
 		}
 		public function getExerciseList(){

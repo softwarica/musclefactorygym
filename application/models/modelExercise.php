@@ -1,7 +1,7 @@
 <?php
 
 class ModelExercise extends CI_Model{
-		public function saveEquipment($eqname,$eqcat,$eqimage,$eqdetails,$eqvideo){
+		public function saveExercise($eqname,$eqcat,$eqimage,$eqdetails,$eqvideo){
 			$arr=array(
 				'eqname'=>$eqname,
 				'eqcat'=>$eqcat,

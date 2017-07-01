@@ -4,20 +4,18 @@
 class ControlTrainer extends CI_Controller{
 	public function newTrainer(){
 		//form validation...........................................
-			$this->load->library('form_validation');
+		$this->load->library('form_validation');
 			
 	
 		$this->form_validation->set_rules('address','address','required',
 		array('required'=>'please clearify address'));
 
-		 $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tbltrainer.email]|strtolower');
-	 	$this->form_validation->set_message('is_unique', 'That Email is Already Exists.');
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tbltrainer.email]|strtolower');
+	 	
+	    $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');
 
-	  $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');
-
-	  $this->form_validation->set_rules('uname', 'username', 'required|trim|is_unique[tbltrainer.uname]|strtolower');
-	 	$this->form_validation->set_message('is_unique', 'That username is Already Exists.');
-
+	    $this->form_validation->set_rules('uname', 'username', 'required|trim|is_unique[tbltrainer.uname]|strtolower');
+	 	
 	    $this->form_validation->set_rules('pword', 'Password', 'required|trim|min_length[8]|alpha_numeric');
 	    $this->form_validation->set_rules('repword', 'Confirm Password', 'required|trim|matches[pword]');
 
@@ -36,7 +34,14 @@ class ControlTrainer extends CI_Controller{
 		$config['max-height']="100";
 
 		$this->load->library('upload',$config);
-		$this->upload->do_upload('userfile');
+		if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        print_r($error);
+                        die();
+                }
+		// $this->upload->do_upload('userfile');
 		$data=array('upload_data'=>$this->upload->data());
 //------------------------------------
 $tname=$this->input->post('tname');
@@ -111,13 +116,35 @@ redirect('controlWelcome/goToTrainerRegistration');
 			$id=$this->input->get('id');
 			$this->load->model('modelTrainer');
 			$result=$this->modelTrainer->retriveTrainerById($id);
+			$resultclass=$this->modelTrainer->retriveClass();
 			
 
 			$data['trainerdetails']=$result;
+			$data['class']=$resultclass;
 			$this->load->view('admin/adminupdate/edittrainer',$data);
 				}
 
 		public function updateEditedTrainer(){
+			//form validation...........................................
+		$this->load->library('form_validation');
+			
+	
+		$this->form_validation->set_rules('address','address','required',
+		array('required'=>'please clearify address'));
+
+	    $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');	    
+	 	
+	    $this->form_validation->set_rules('pword', 'Password', 'required|trim|min_length[8]|alpha_numeric');
+	    $this->form_validation->set_rules('repword', 'Confirm Password', 'required|trim|matches[pword]');
+
+	
+
+	if($this->form_validation->run()==false){
+		
+		echo validation_errors();
+				// .................................................................................
+
+	}else{
 						$id=$this->input->post('id');
 						$tname=$this->input->post('tname');
 						$address=$this->input->post('address');
@@ -134,7 +161,7 @@ redirect('controlWelcome/goToTrainerRegistration');
 
 			$this->session->set_flashData('edit_trainer_message','trainer successfully update');
 					redirect(base_url()."controlTrainer/editTrainer?id=".$id);
-
+				}
 					}
 
 						public function editPicture(){

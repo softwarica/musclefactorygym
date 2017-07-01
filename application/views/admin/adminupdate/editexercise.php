@@ -21,7 +21,7 @@ if($retriveexerciselist->num_rows() > 0){
   foreach($retriveexerciselist->result() as $row){
 ?>
 
-<form class="" action="<?php echo base_url();?>controlExercise/updateEditedExercise" method="post">
+<form name="myForm" action="<?php echo base_url();?>controlExercise/updateEditedExercise" method="post">
 <div class="col-lg-6">
 <div class="form-group">
     <input type="hidden" name="id" class="form-control" id="id" required="required" value="<?php echo $row->id; ?>">
@@ -35,7 +35,7 @@ if($retriveexerciselist->num_rows() > 0){
   <div class="form-group">
 
    <label for="eqcat">Exercise category:</label>
-    <select class="form-control" id="eqcat" name="eqcat">
+    <select class="form-control" id="eqcat" name="eqcat" onchange="checkCat()">
 
     <option><?php echo $row->eqcat;?></option>
     <option>select other to change category</option>
@@ -53,7 +53,9 @@ foreach($eqclass->result() as $rowcat){
 ?>
 </select>
  </div>
- 
+ <div class="form-group">
+          <span id="eqcatMessage"></span>
+        </div>
  <div class="form-group">
   <div class="col-lg-12">
     <label for="eqimage">Exercise image:</label>
@@ -85,10 +87,13 @@ foreach($eqclass->result() as $rowcat){
   <div class="clear"></div>
    <div class="form-group" style="margin-top: 10px">
     <label for="eqdetails">Exercise details:</label>
-    <textarea type="text" name="eqdetails"  class="form-control" id="eqdetails" placeholder="please describe about exercise" required="required" style="height:100px;"><?php echo $row->eqdetails;?></textarea>
+    <textarea type="text" name="eqdetails" onchange="checkDetails()"  class="form-control" id="eqdetails" placeholder="please describe about exercise" required="required" style="height:100px;"><?php echo $row->eqdetails;?></textarea>
   </div>
+  <div class="form-group">
+          <span id="eqdetailsMessage"></span>
+        </div>
 <div class="panel panel-footer">
-<input type="submit" name="btnequipmentsubmit" value="submit" class="btn btn-success" >
+<input type="submit" id="btnsubmit" name="btnequipmentsubmit" onmouseover="checkCat()" value="submit" class="btn btn-success" >
 </div>
 </div>
 </form>
@@ -102,4 +107,53 @@ foreach($eqclass->result() as $rowcat){
 </div>
 </div>
 <div><?php $this->load->view('footer');?></div>
+<script type="text/javascript">
+    function checkCat(){
 
+          var eqcat=document.forms["myForm"]["eqcat"].value;
+          var eqcatMessage=$('#eqcatMessage');//this variable is for css
+          
+
+          if(eqcat=='select other to change category'){
+        document.getElementById('eqcat').focus();
+        eqcatMessage.css({
+            'color':'red'
+          });
+         document.getElementById('eqcatMessage').innerHTML='please select category';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+           $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+          document.getElementById('eqcatMessage').innerHTML='';
+        }
+
+    }
+
+       function checkDetails(){
+
+          var eqdetails=document.forms["myForm"]["eqdetails"].value;
+          var eqdetailsMessage=$('#eqdetailsMessage');//this variable is for css
+          
+
+        
+          if(eqdetails.length>500){
+        document.getElementById('eqdetails').focus();
+        eqdetailsMessage.css({
+            'color':'red'
+          });
+         document.getElementById('eqdetailsMessage').innerHTML='limit exceed';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+          document.getElementById('eqdetailsMessage').innerHTML='';
+          $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+        }
+
+    }
+    </script>

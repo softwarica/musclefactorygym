@@ -21,7 +21,7 @@ if($retrivevideolist->num_rows() > 0){
   foreach($retrivevideolist->result() as $row){
 ?>
 
-<form class="" action="<?php echo base_url();?>controlVideo/updateEditedVideoDetails" method="post">
+<form name="myForm" action="<?php echo base_url();?>controlVideo/updateEditedVideoDetails" method="post">
 
 <div class="form-group">
     <input type="hidden" name="id" class="form-control" id="id" required="required" value="<?php echo $row->id; ?>">
@@ -36,7 +36,7 @@ if($retrivevideolist->num_rows() > 0){
   <div class="form-group">
 
    <label for="vcat">Video category:</label>
-    <select class="form-control" id="vcat" name="vcat">
+    <select class="form-control" id="vcat" name="vcat" onchange="checkCat()">
 
     <option><?php echo $row->vcat;?></option>
     <option>select other to change category</option>
@@ -54,6 +54,10 @@ foreach($vclass->result() as $rowcat){
 ?>
 </select>
  </div>
+<div class="form-group">
+  <div id="vcatMessage"></div>
+</div>
+
 </div>
 <div class="col-lg-6">
 <div class="form-group">
@@ -79,7 +83,7 @@ foreach($vclass->result() as $rowcat){
   <div class="clear"></div>
   
 <div class="panel panel-footer">
-<input type="submit" name="btnvideosubmit" value="submit" class="btn btn-success" >
+<input type="submit" id="btnsubmit" name="btnvideosubmit" value="submit" class="btn btn-success" >
 </div>
 </div>
 </form>
@@ -93,4 +97,30 @@ foreach($vclass->result() as $rowcat){
 </div>
 </div>
 <div><?php $this->load->view('footer');?></div>
+<script type="text/javascript">
+  function checkCat(){
+
+          var vcat=document.forms["myForm"]["vcat"].value;
+          var vcatMessage=$('#vcatMessage');//this variable is for css
+          
+
+          if(vcat=='select other to change category'){
+        document.getElementById('vcat').focus();
+        vcatMessage.css({
+            'color':'red'
+          });
+         document.getElementById('vcatMessage').innerHTML='please select category';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+           $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+          document.getElementById('vcatMessage').innerHTML='';
+        }
+
+    }
+
+    </script>
 

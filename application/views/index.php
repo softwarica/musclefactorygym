@@ -296,7 +296,7 @@ color:white !important;
 		     	 </div>
 				</div>
 				<div class="col-md-3">
-				  <h3 class="m_4 card">Membership Prices</h3>
+				  <h3 class="m_2 card">Membership Prices</h3>
 				  <div class="members">
 				   <h4 class="m_3">25% Discount of for all members</h4>
 				   <p>Discount on services and <br>treatments at the GymBase for<br> all membership cards holders.</p>

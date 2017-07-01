@@ -29,20 +29,18 @@ $this->load->view('admin/adminPage');
 
 public function newMember(){
 		//form validation...........................................
-			$this->load->library('form_validation');
-			$this->form_validation->set_rules('mname','membername',
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('mname','membername',
 				'required|trim|callback_convert_lowercase');
 	
 		$this->form_validation->set_rules('address','address','required',
 		array('required'=>'please clearify address'));
 
-		 $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tblregister.email]|strtolower');
-	 	$this->form_validation->set_message('is_unique_email', 'That Email is Already Exists.');
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[tblregister.email]|strtolower');
 
-	 	 $this->form_validation->set_rules('uname', 'username', 'required|trim|is_unique[tblregister.uname]|strtolower');
-	 	$this->form_validation->set_message('is_unique_uname', 'That username is Already Exists.');
+	 	$this->form_validation->set_rules('uname', 'username', 'required|trim|is_unique[tblregister.uname]|strtolower');
 
-	  $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');
+	    $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');
 
 	    $this->form_validation->set_rules('pword', 'Password', 'required|trim|min_length[8]|alpha_numeric');
 	    $this->form_validation->set_rules('repword', 'Confirm Password', 'required|trim|matches[pword]');
@@ -50,10 +48,7 @@ public function newMember(){
 	
 
 	if($this->form_validation->run()==false){
-		
 		echo validation_errors();
-				// .................................................................................
-
 	}else{
 		//for uploading images
 		$config['upload_path']="assets/images/members";
@@ -62,7 +57,14 @@ public function newMember(){
 		$config['max-height']="100";
 
 		$this->load->library('upload',$config);
-		$this->upload->do_upload('userfile');
+		if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        print_r($error);
+                        die();
+                }
+		// $this->upload->do_upload('userfile');
 		$data=array('upload_data'=>$this->upload->data());
 //------------------------------------
 $mname=$this->input->post('mname');
@@ -139,11 +141,39 @@ $id=$this->input->get('id');
 $this->modelAdmin->retriveMemberById($id);
 
 $result=$this->modelAdmin->retriveMemberById($id);
+$resultclass=$this->modelAdmin->retriveClass();
+
+
 $data['memberdetails']=$result;
+$data['class']=$resultclass;
 $this->load->view('admin/adminupdate/editmember',$data);
 }
 
 public function updateEditedMember(){
+		//form validation...........................................
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('mname','membername',
+				'required|trim|callback_convert_lowercase');
+	
+		$this->form_validation->set_rules('address','address','required',
+		array('required'=>'please clearify address'));
+
+		// $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique_email[tblregister.email]|strtolower');
+	 // 	$this->form_validation->set_message('is_unique_email', 'That Email is Already Exists.');
+
+	 // 	$this->form_validation->set_rules('uname', 'username', 'required|trim|is_unique_uname[tblregister.uname]|strtolower');
+	 // 	$this->form_validation->set_message('is_unique_uname', 'That username is Already Exists.');
+
+	    $this->form_validation->set_rules('contact','Contact','required|regex_match[/^[0-9]{10}$/]');
+
+	    $this->form_validation->set_rules('pword', 'Password', 'required|trim|min_length[8]|alpha_numeric');
+	    $this->form_validation->set_rules('repword', 'Confirm Password', 'required|trim|matches[pword]');
+
+	
+
+	if($this->form_validation->run()==false){
+		echo validation_errors();
+	}else{
 $id=$this->input->post('id');
 $mname=$this->input->post('mname');
 $address=$this->input->post('address');
@@ -168,8 +198,7 @@ redirect(base_url()."controlAdmin/editMember?id=".$id);
 // $data['update_message']="data successfully update";
 // $this->load->view('admin/adminPage',$data);
 
-
-
+}
 }
 public function viewDetails(){
 	$id=$this->input->get('id');
@@ -189,7 +218,14 @@ public function editPicture(){
 		$config['max-height']="100";
 
 		$this->load->library('upload',$config);
-		$this->upload->do_upload('userfile');
+		if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        print_r($error);
+                        die();
+                }
+		// $this->upload->do_upload('userfile');
 		$data=array('upload_data'=>$this->upload->data());
 		
 		$this->load->model('modelAdmin');

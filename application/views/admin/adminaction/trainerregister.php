@@ -45,9 +45,15 @@ if(!isset($this->session->userdata['sess_id'])) {
           <label for="email">Trainer Email:</label>
           <input type="email" name="email" class="form-control" id="email" placeholder="please enter member email" required="required">
         </div>
+         <div class="form-group">
+          <span id="emailresult"></span>
+        </div>
         <div class="form-group">
           <label for="uname">Username:</label>
           <input type="text" name="uname" class="form-control" id="uname" placeholder="please enter username" required="required">
+        </div>
+        <div class="form-group">
+          <span id="unameresult"></span>
         </div>
        
 </div>
@@ -80,7 +86,20 @@ if(!isset($this->session->userdata['sess_id'])) {
 
     <div class="form-group">
      <label for="package">Package:</label>
-     <input type="text" name="package" class="form-control" id="package" placeholder="please enter package" required="required">
+     <select class="form-control" id="package" name="package">
+     <?php
+     if($class->num_rows()>0){
+      foreach($class->result() as $row){
+        ?>
+     
+       <option><?php echo $row->cname;?></option>
+     
+     <?php
+      }
+     }
+      ?>
+      </select>
+     <!-- <input type="text" name="package" class="form-control" id="package" placeholder="please enter package" required="required"> -->
     </div>
      
     <div class="panel panel-footer">
@@ -92,9 +111,77 @@ if(!isset($this->session->userdata['sess_id'])) {
 </div>
 </div>
 <?php $this->load->view('footer');?>
+
 <script type="text/javascript">
+  
+    var emailresult=$('#emailresult');
+    $(document).ready(function(){
+      $('#email').change(function(){
 
+          var email=$('#email').val();
+          if(!email==''){
 
+            $.ajax({
+              url:"<?php echo base_url();?>controlCheck/checkTrainerEmailAvailability",
+              type:"POST",
+              data:{email:email},
+              success:function(data){
+                
+                emailresult.css({
+            'color':'red'
+              });
+
+                emailresult.html(data);
+                //this is to again focus on email if email is already register
+                if(emailresult.html()=='email already register' || emailresult.html()=='invalid email' ){
+                 document.getElementById('email').focus();
+             }
+              },
+
+            });
+
+          }
+
+          
+      });
+    });
+</script>
+
+<script type="text/javascript">
+   var unameresult=$('#unameresult');
+    $(document).ready(function(){
+      $('#uname').change(function(){
+          var uname=$('#uname').val();
+         
+          if(!uname==''){
+            $.ajax({
+              url:"<?php echo base_url();?>controlCheck/checkTrainerUnameAvailability",
+              type:"POST",
+              data:{uname:uname},
+              success:function(data){
+                
+                unameresult.css({
+            'color':'red'
+              });
+
+                unameresult.html(data);
+                //this is to again focus on uname if uname is already register
+                if(unameresult.html()=='uname already register'){
+                 document.getElementById('uname').focus();
+             }
+              },
+
+            });
+
+          }
+
+          
+      });
+    });
+
+</script>
+
+<script type="text/javascript">
     function checkLength(){
 
           var pword=document.forms["myForm"]["pword"].value;
@@ -160,88 +247,6 @@ if(!isset($this->session->userdata['sess_id'])) {
     });
         document.getElementById('pword').focus();
     }
-}
-
-function checkWeight(){
-
- var weight=document.forms["myForm"]["weight"].value;
- var weightMessage=$('#weightMessage');//this variable is for css
-          if(weight <= 40){
-            
-            document.getElementById('weight').focus();
-            weightMessage.css({
-            'color':'red'
-          });
-            document.getElementById('weightMessage').innerHTML='please enter weight greater than 40kg';
-             $(document).ready(function(){
-   
-        $("#btnsubmit").fadeOut()
-    });
-
-        }
-        else{
-          document.getElementById('weightMessage').innerHTML='';
-            $(document).ready(function(){
-   
-        $("#btnsubmit").fadeIn()
-    });
-        }
-
-}
-
-function checkftHeight(){
-
- var ftheight=document.forms["myForm"]["ftheight"].value;
- var ftheightMessage=$('#ftheightMessage');//this variable is for css
-          if(ftheight <= 4){
-            
-            document.getElementById('ftheight').focus();
-             ftheightMessage.css({
-            'color':'red'
-          });
-            document.getElementById('ftheightMessage').innerHTML='please enter height greater than 4 feet';
-             $(document).ready(function(){
-   
-        $("#btnsubmit").fadeOut()
-    });
-
-        }
-        else{
-          document.getElementById('ftheightMessage').innerHTML='';
-
-            $(document).ready(function(){
-   
-        $("#btnsubmit").fadeIn()
-    });
-        }
-
-}
-
-function checkHeightinch(){
- var heightinch=document.forms["myForm"]["heightinch"].value;
- var heightinchMessage=$('#heightinchMessage');//this variable is for css
-          if(heightinch > 12){
-            
-            document.getElementById('heightinch').focus();
-             heightinchMessage.css({
-            'color':'red'
-          });
-            document.getElementById('heightinchMessage').innerHTML='please enter height less than 12 inch';
-             $(document).ready(function(){
-   
-        $("#btnsubmit").fadeOut()
-    });
-
-        }
-        else{
-          document.getElementById('heightinchMessage').innerHTML='';
-
-            $(document).ready(function(){
-   
-        $("#btnsubmit").fadeIn()
-    });
-        }
-
 }
 
 function checkContact(){

@@ -1,6 +1,14 @@
 <?php
 
 class ControlCheck extends CI_Controller{
+	public function __construct(){
+		parent:: __construct();
+		// header('Expires: Thu, 01-Jan-70 00:00:01 GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+header('Cache-Control:no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+	}
 	public function checkForLogin(){
 		$uname=$this->input->post('uname');
 		$pword=$this->input->post('pword');
@@ -69,13 +77,60 @@ class ControlCheck extends CI_Controller{
 			}
 		}
 
+			public function checkTrainerUnameAvailability(){
+		// if(!filter_val($_POST['uname'], FILTER_VALIDATE_EMAIL)){
+		// 	echo 'invalid email';
+
+		// }else{
+			$this->load->model('modelCheck');
+			if($this->modelCheck->isTrainerUnameAvailable($_POST['uname'])){
+					echo 'uname already register';
+			}
+			else{
+				echo 'valid uname';
+			}
+		}
+
+
+
+		public function checkEmailAvailability(){
+		if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
+		{
+			echo 'invalid email';
+
+		}else{
+			$this->load->model('modelCheck');
+			if($this->modelCheck->isEmailAvailable($_POST['email'])){
+					echo 'email already register';
+			}
+			else{
+				echo 'valid uname';
+			}
+		}
+}
+
+	public function checkTrainerEmailAvailability(){
+		if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
+		{
+			echo 'invalid email';
+
+		}else{
+			$this->load->model('modelCheck');
+			if($this->modelCheck->isTrainerEmailAvailable($_POST['email'])){
+					echo 'email already register';
+			}
+			else{
+				echo 'valid uname';
+			}
+		}
+}
 		public function checkMemberName(){
 				$this->load->model('modelCheck');
 			if($this->modelCheck->isMemberAvailable($_POST['mid'])){
 					echo $this->modelCheck->isMemberAvailable($_POST['mid']);
 			}
 			else{
-				echo 'uname not available';
+				echo 'member not available';
 			}
 		}
 	
@@ -105,6 +160,7 @@ class ControlCheck extends CI_Controller{
 
 			$data['retriveschedule']=$resultSchedule;
 			$this->load->view('schedulepage',$data);
+			
 
 		}
 	

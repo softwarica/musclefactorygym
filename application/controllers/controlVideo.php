@@ -153,7 +153,7 @@ $result=$this->modelVideo->retriveVideoById($id);
 
 		$id=$this->input->get('id');
 			$this->load->model('modelVideo');
-			$result=$this->modelVideo->retriveTblVideoById($id);
+			$result=$this->modelVideo->retriveVideoById($id);
 			$resultcat=$this->modelVideo->retriveCategory();
 
 			$data['retrivevideolist']=$result;

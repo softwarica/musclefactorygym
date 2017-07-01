@@ -18,7 +18,7 @@ if(!isset($this->session->userdata['sess_id'])) {
   </div>
 <div class="panel panel-body" style="font-size: 12px;">
 
-<form class="" action="<?php echo base_url();?>controlVideo/newVideo" method="post"  enctype="multipart/form-data">
+<form name="myForm" action="<?php echo base_url();?>controlVideo/newVideo" method="post"  enctype="multipart/form-data">
    <div class="form-group">
     <label for="vname">Video Name:</label>
     <input type="text" name="vname" class="form-control" id="vname" placeholder="please enter equipment name" required="required">
@@ -26,7 +26,7 @@ if(!isset($this->session->userdata['sess_id'])) {
 
   <div class="form-group">
    <label for="vcat">video Category</label>
-   <select class="form-control" name="vcat" id="vcat">
+   <select class="form-control" name="vcat" id="vcat" onchange="checkCat()">
    <option>please select category</option>
    <?php
 if($vdclass->num_rows() > 0){
@@ -40,15 +40,45 @@ if($vdclass->num_rows() > 0){
    ?>
    </select>
  </div>
+ <div class="form-group">
+   <div id="vcatMessage"></div>
+ </div>
 <div class="form-group">
    <label for="video">video</label>
    <input type="file"  name="video" class="form-control" id="video"  required="required">
  </div>
 <div class="panel panel-footer">
-<input type="submit" name="btnvideosubmit" value="submit" class="btn btn-success" >
+<input type="submit" id="btnsubmit" name="btnvideosubmit" value="submit" class="btn btn-success" onmouseover="checkCat()"/>
 </div>
 </form>
 </div>
 </div>
 </div>
 <?php $this->load->view('footer');?>
+
+<script type="text/javascript">
+  function checkCat(){
+
+          var vcat=document.forms["myForm"]["vcat"].value;
+          var vcatMessage=$('#vcatMessage');//this variable is for css
+          
+
+          if(vcat=='please select category'){
+        document.getElementById('vcat').focus();
+        vcatMessage.css({
+            'color':'red'
+          });
+         document.getElementById('vcatMessage').innerHTML='please select category';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+           $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+          document.getElementById('vcatMessage').innerHTML='';
+        }
+
+    }
+
+    </script>

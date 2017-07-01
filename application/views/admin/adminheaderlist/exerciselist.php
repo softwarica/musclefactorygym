@@ -67,9 +67,9 @@ if($exerciselist->num_rows() > 0){
 	     	 		<p><?php echo $row->eqcat;?></p>
 	     	 		
 	     	 		</div>
-	     	 		<div class="col-lg-9">
+	     	 		<div class="col-lg-9" style="word-wrap: break-word;">
 	     	 		<b>Exercise details:</b>
-	     	 		<p><?php echo $row->eqdetails;?></p>
+	     	 		<textarea style="height:200px;width:100%"><?php echo $row->eqdetails;?></textarea>
 	     	 		</div>
 	     	 		</div>
 	     	 	 

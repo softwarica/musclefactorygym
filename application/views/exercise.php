@@ -41,9 +41,9 @@ if($exercise->num_rows() > 0){
 	     	 		<p><?php echo $row->eqcat;?></p>
 	     	 		
 	     	 		</div>
-	     	 		<div class="col-lg-12">
+	     	 		<div class="col-lg-12" style="word-wrap: break-word;">
 	     	 		<h4>Exercise details:</h4>
-	     	 		<p><?php echo $row->eqdetails;?></p>
+	     	 		<textarea style="height:200px;width:100%"><?php echo $row->eqdetails;?></textarea>
 	     	 		</div>
 	     	 		<!-- <div class="btn2">
 					   <a href="#">Reservation</a>

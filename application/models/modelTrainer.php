@@ -68,6 +68,10 @@ public function deleteTrainer($id){
 	$this->db->where('id',$id);
 	$this->db->update('tbltrainer',$arr);
 		}
+
+		public function retriveClass(){
+			return $this->db->get('tblclass');
+		}
 }
 
 

@@ -12,7 +12,8 @@ if(!isset($this->session->userdata['sess_id'])) {
 <div class="panel panel-default" style="margin-top:10px">
   <div class="panel panel-heading">
 <h5 align="center" class="btn btn-link">member registration form:
-<span style="color:red"><?php echo $this->session->flashdata('insertmsg');?></span></h5>
+<span style="color:red"><?php echo $this->session->flashdata('insertmsg');?></span>
+</h5>
   </div>
 <div class="panel panel-body" id="menu" style="font-size: 12px;">
 
@@ -36,6 +37,9 @@ if(!isset($this->session->userdata['sess_id'])) {
          <div class="form-group">
           <label for="email">Member Email:</label>
           <input type="email" name="email" class="form-control" id="email" placeholder="please enter member email" required="required">
+        </div>
+        <div class="form-group">
+          <span id="emailresult"></span>
         </div>
         <div class="form-group">
           <label for="uname">Username:</label>
@@ -101,7 +105,20 @@ if(!isset($this->session->userdata['sess_id'])) {
 
     <div class="form-group">
      <label for="package">Package:</label>
-     <input type="text" name="package" class="form-control" id="package" placeholder="please enter package" required="required">
+     <select class="form-control" id="package" name="package">
+     <?php
+     if($class->num_rows()>0){
+      foreach($class->result() as $row){
+        ?>
+     
+       <option><?php echo $row->cname;?></option>
+     
+     <?php
+      }
+     }
+      ?>
+      </select>
+     <!-- <input type="text" name="package" class="form-control" id="package" placeholder="please enter package" required="required"> -->
     </div>
       <div class="form-group">
      <label for="bmi">BMI:</label>
@@ -135,40 +152,62 @@ if(!isset($this->session->userdata['sess_id'])) {
                 
                 unameresult.css({
             'color':'red'
+              });
 
-          });
-                $('#unameresult').html(data);
+                unameresult.html(data);
+                //this is to again focus on uname if uname is already register
+                if(unameresult.html()=='uname already register'){
                  document.getElementById('uname').focus();
+             }
               },
 
             });
+
           }
+
+          
       });
     });
- 
 
 </script>
 
 <script type="text/javascript">
-// function checkUname(){
-     
-//   $(document).ready(function(){
-//       var uname=document.forms["myForm"]["uname"].value;
-//        alert(uname);
-//       if(uname !="")
-//       {
-//         $.ajax({
-//           url:"<?php echo base_url();?>controlCheck/checkUnameAvailability";
-//           method:"POST",
-//           data:{uname:uname}
-        
-//         });
-//       }
-   
-//   });
+  
+    var emailresult=$('#emailresult');
+    $(document).ready(function(){
+      $('#email').change(function(){
 
-// }
+          var email=$('#email').val();
+          if(!email==''){
 
+            $.ajax({
+              url:"<?php echo base_url();?>controlCheck/checkEmailAvailability",
+              type:"POST",
+              data:{email:email},
+              success:function(data){
+                
+                emailresult.css({
+            'color':'red'
+              });
+
+                emailresult.html(data);
+                //this is to again focus on email if email is already register
+                if(emailresult.html()=='email already register' || emailresult.html()=='invalid email' ){
+                 document.getElementById('email').focus();
+             }
+              },
+
+            });
+
+          }
+
+          
+      });
+    });
+</script>
+
+
+<script type="text/javascript">
   function bmiCalculation(){
     
     var ftheight=document.getElementById('ftheight').value; 

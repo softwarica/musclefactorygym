@@ -14,9 +14,42 @@ class ModelCheck extends CI_Model{
 	return $this->db->get('tbladmin');
 	}
 
+	
+	public function isEmailAvailable($email){
+		$this->db->where('email',$email);
+		$query=$this->db->get('tblregister');
+
+		if($query->num_rows() >0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function isTrainerEmailAvailable($email){
+		$this->db->where('email',$email);
+		$query=$this->db->get('tbltrainer');
+
+		if($query->num_rows() >0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function isUnameAvailable($uname){
 		$this->db->where('uname',$uname);
 		$query=$this->db->get('tblregister');
+
+		if($query->num_rows() >0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function isTrainerUnameAvailable($uname){
+		$this->db->where('uname',$uname);
+		$query=$this->db->get('tbltrainer');
 
 		if($query->num_rows() >0){
 			return true;

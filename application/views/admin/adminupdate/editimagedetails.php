@@ -21,7 +21,7 @@ if($retriveimagelist->num_rows() > 0){
   foreach($retriveimagelist->result() as $row){
 ?>
 
-<form class="" action="<?php echo base_url();?>controlImage/updateEditedImageDetails" method="post">
+<form name="myForm" action="<?php echo base_url();?>controlImage/updateEditedImageDetails" method="post">
 
 <div class="form-group">
     <input type="hidden" name="id" class="form-control" id="id" required="required" value="<?php echo $row->id; ?>">
@@ -35,7 +35,7 @@ if($retriveimagelist->num_rows() > 0){
   <div class="form-group">
 
    <label for="icat">Image category:</label>
-    <select class="form-control" id="icat" name="icat">
+    <select class="form-control" id="icat" name="icat" onchange="checkCat()">
 
     <option><?php echo $row->icat;?></option>
     <option>select other to change category</option>
@@ -53,7 +53,9 @@ foreach($iclass->result() as $rowcat){
 ?>
 </select>
  </div>
-
+<div class="form-group">
+  <div id="icatMessage"></div>
+</div>
 <div class="form-group">
 <div class="col-lg-12">
     <label for="image">image:</label>
@@ -66,7 +68,7 @@ foreach($iclass->result() as $rowcat){
   <div class="clear"></div>
   
 <div class="panel panel-footer">
-<input type="submit" name="btnequipmentsubmit" value="submit" class="btn btn-success" >
+<input type="submit" id="btnsubmit" name="btnequipmentsubmit" value="submit" class="btn btn-success" >
 </div>
 
 </form>
@@ -80,4 +82,31 @@ foreach($iclass->result() as $rowcat){
 </div>
 </div>
 <div><?php $this->load->view('footer');?></div>
+
+<script type="text/javascript">
+  function checkCat(){
+
+          var icat=document.forms["myForm"]["icat"].value;
+          var icatMessage=$('#icatMessage');//this variable is for css
+          
+
+          if(icat=='select other to change category'){
+        document.getElementById('icat').focus();
+        icatMessage.css({
+            'color':'red'
+          });
+         document.getElementById('icatMessage').innerHTML='please select category';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+           $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+          document.getElementById('icatMessage').innerHTML='';
+        }
+
+    }
+
+    </script>
 

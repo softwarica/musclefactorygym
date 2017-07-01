@@ -48,10 +48,18 @@ class ControlWelcome extends CI_Controller {
 		$this->load->view('loginform');
 	}
 	public function goToMemberRegistration(){
-		$this->load->view('admin/adminaction/memberregister');
+		$this->load->model('modelWelcome');
+		$result=$this->modelWelcome->retriveClass();
+		$data['class']=$result;
+
+		$this->load->view('admin/adminaction/memberregister',$data);
 	}
 	public function goToTrainerRegistration(){
-		$this->load->view('admin/adminaction/trainerregister');
+		$this->load->model('modelWelcome');
+		$result=$this->modelWelcome->retriveClass();
+		$data['class']=$result; 
+
+		$this->load->view('admin/adminaction/trainerregister',$data);
 	}
 	// public function goToExerciseRegistration(){
 	// 	$this->load->view('admin/adminaction/adminexercise');

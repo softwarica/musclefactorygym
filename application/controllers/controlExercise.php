@@ -1,5 +1,6 @@
 <?php
 class ControlExercise extends CI_Controller{
+
 	public function newExercise(){
 			$eqname=$this->input->post('eqname');
 			$eqcat=$this->input->post('eqcat');
@@ -35,7 +36,7 @@ class ControlExercise extends CI_Controller{
 // .......................
 
 			$this->load->model('modelExercise');
-			$this->modelExercise->saveEquipment($eqname,$eqcat,$eqimage,$eqdetails,$eqvideo);
+			$this->modelExercise->saveExercise($eqname,$eqcat,$eqimage,$eqdetails,$eqvideo);
 			if(isset($_POST['btntreqsubmit'])){
 			$this->session->set_flashdata('eqinsertmsg','data sucessfully insert into table exercise');
 			redirect('controlTrainer/getCategory');

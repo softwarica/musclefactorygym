@@ -20,7 +20,7 @@ if(!isset($this->session->userdata['sess_id_for_trainer'])){
 if($retrivediet->num_rows()>0){
   foreach($retrivediet->result() as $row){
     ?>
-<form class="" action="<?php echo base_url();?>controlDiet/updateEditedDiet" method="post" enctype="multipart/form-data" >
+<form name="myForm" action="<?php echo base_url();?>controlDiet/updateEditedDiet" method="post" enctype="multipart/form-data" >
 <input id="id" type="hidden" name="id" value="<?php echo $row->id;?>"/>
 <div class="col-lg-6">
    <div class="form-group">
@@ -33,7 +33,7 @@ if($retrivediet->num_rows()>0){
 
    <label for="eqcat">Diet category:</label>
  
-<select class="form-control" id="dcat" name="dcat">
+<select class="form-control" id="dcat" name="dcat" onchange="checkCat()">
 <option><?php echo $row->dcat;?></option>
     <option>please select category</option>
     <option>gain weight</option>
@@ -41,7 +41,9 @@ if($retrivediet->num_rows()>0){
     <option>loose weight</option>
 </select>
  </div>
- 
+  <div class="form-group">
+   <div id="dcatMessage"></div>
+ </div>
   <div class="form-group">
   <div class="col-lg-12">
     <label for="dimage">diet image:</label>
@@ -73,10 +75,13 @@ if($retrivediet->num_rows()>0){
   <div class="clear"></div>
    <div class="form-group" style="margin-top: 10px">
     <label for="ddetails">diet details:</label>
-    <textarea type="text" name="ddetails"  class="form-control" id="ddetails" placeholder="please describe about exercise" required="required" style="height:100px;"><?php echo $row->ddetails;?></textarea>
+    <textarea onchange="checkDetails()" type="text" name="ddetails"  class="form-control" id="ddetails" placeholder="please describe about exercise" required="required" style="height:100px;"><?php echo $row->ddetails;?></textarea>
   </div>
+   <div class="form-group">
+   <div id="ddetailsMessage"></div>
+ </div>
 <div class="panel panel-footer">
-<input type="submit" name="btntdietsubmit" value="submit" class="btn btn-success" >
+<input type="submit" id="btnsubmit" name="btntdietsubmit" value="submit" class="btn btn-success" >
 </div>
 </div>
 </form>
@@ -88,3 +93,53 @@ if($retrivediet->num_rows()>0){
 </div>
 </div>
 <?php $this->load->view('footer');?>
+<script type="text/javascript">
+    function checkCat(){
+
+          var dcat=document.forms["myForm"]["dcat"].value;
+          var dcatMessage=$('#dcatMessage');//this variable is for css
+          
+
+          if(dcat=='please select category'){
+        document.getElementById('dcat').focus();
+        dcatMessage.css({
+            'color':'red'
+          });
+         document.getElementById('dcatMessage').innerHTML='please select category';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+           $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+          document.getElementById('dcatMessage').innerHTML='';
+        }
+
+    }
+
+       function checkDetails(){
+
+          var ddetails=document.forms["myForm"]["ddetails"].value;
+          var ddetailsMessage=$('#ddetailsMessage');//this variable is for css
+          
+
+        
+          if(ddetails.length>500){
+        document.getElementById('ddetails').focus();
+        ddetailsMessage.css({
+            'color':'red'
+          });
+         document.getElementById('ddetailsMessage').innerHTML='limit exceed';
+                  $(document).ready(function(){
+                      $('#btnsubmit').fadeOut();
+                  });
+        }else{
+          document.getElementById('ddetailsMessage').innerHTML='';
+           $(document).ready(function(){
+                      $('#btnsubmit').fadeIn();
+                  });
+        }
+
+    }
+    </script>

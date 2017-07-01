@@ -24,7 +24,7 @@ class ControlImage extends CI_Controller{
 
  	*/
  		$config['upload_path']="assets/images";
-		$config['allowed_types']  = 'gif|jpg|png|mp4';
+		$config['allowed_types']  = 'gif|jpg|png';
 		
 
 		$this->load->library('upload',$config);

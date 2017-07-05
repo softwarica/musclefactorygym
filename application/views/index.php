@@ -36,6 +36,7 @@ color:white !important;
 			   <li><a href="<?php echo base_url();?>controlImage/getImage">images</a></li>
 			   <li><a href="<?php echo base_url();?>controlExercise/getExercise">exercises</a></li>
 			   <li><a href="<?php echo base_url();?>controlDiet/getDiet">diets</a></li>
+			   <li><a href="<?php echo base_url();?>assets/ug/ug.pdf">help</a></li>
 			   <li><a href="<?php echo base_url();?>controlWelcome/goToLogin" class="btn btn-success">login</a></li>
 			 </ul>
 		  </div><!-- end h_menu4 -->

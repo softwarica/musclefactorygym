@@ -36,7 +36,7 @@ if(!isset($this->session->userdata['sess_id'])) {
          </div>
            <div class="form-group">
      <label for="contact">Trainer Contact:</label>
-     <input type="text" name="contact" onchange="checkContact()" class="form-control" id="contact" placeholder="please enter member contact" required="required">
+     <input type="number" name="contact" onchange="checkContact()" class="form-control" id="contact" placeholder="please enter member contact" required="required">
     </div>
     <div class="form-group">
           <span id="contactMessage"></span>

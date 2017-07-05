@@ -77,21 +77,21 @@ if($memberdetails->num_rows() > 0){
 
         <div class="form-group">
           <label for="weight">weight(in kg):</label>
-          <input type="text" value="<?php echo $row->weight;?>" onchange="checkWeight()" onmouseout="bmiCalculation()" name="weight" class="form-control" id="weight" placeholder="please enter member weight" required="required">
+          <input type="number" value="<?php echo $row->weight;?>" onchange="checkWeight()" onmouseout="bmiCalculation()" name="weight" class="form-control" id="weight" placeholder="please enter member weight" required="required">
         </div>
         <div class="form-group">
           <span id="weightMessage"></span>
         </div>
         <div class="form-group">
           <label for="ftheight">height(feet):</label>
-          <input type="text" name="ftheight" onchange="checkftHeight()" onmouseout="bmiCalculation()"  value="<?php echo $row->ftheight;?>" class="form-control" id="ftheight" placeholder="please enter feet" required="required">
+          <input type="number" name="ftheight" onchange="checkftHeight()" onmouseout="bmiCalculation()"  value="<?php echo $row->ftheight;?>" class="form-control" id="ftheight" placeholder="please enter feet" required="required">
         </div>
         <div class="form-group">
           <span id="ftheightMessage"></span>
         </div>
          <div class="form-group">
           <label for="heightinch">height(inch):</label>
-          <input type="text" name="heightinch"  value="<?php echo $row->heightinch;?>" class="form-control" id="heightinch" placeholder="please enter inch" onchange="checkHeightinch()" onmouseout="bmiCalculation()" required="required">
+          <input type="number" name="heightinch"  value="<?php echo $row->heightinch;?>" class="form-control" id="heightinch" placeholder="please enter inch" onchange="checkHeightinch()" onmouseout="bmiCalculation()" required="required">
         </div>
          <div class="form-group">
           <span id="heightinchMessage"></span>
@@ -99,7 +99,7 @@ if($memberdetails->num_rows() > 0){
         
 <div class="form-group">
  <label for="contact">Member Contact:</label>
- <input type="text" name="contact" class="form-control" onchange="checkContact()" id="contact" value="<?php echo $row->contact; ?>" placeholder="please enter member contact" required="required">
+ <input type="number" name="contact" class="form-control" onchange="checkContact()" id="contact" value="<?php echo $row->contact; ?>" placeholder="please enter member contact" required="required">
 </div>
 <div class="form-group">
           <span id="contactMessage"></span>

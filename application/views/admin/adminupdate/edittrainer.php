@@ -37,7 +37,7 @@ if($trainerdetails->num_rows() > 0){
          </div>
            <div class="form-group">
      <label for="contact">Trainer Contact:</label>
-     <input type="text" name="contact" value="<?php echo $row->contact; ?>" onchange="checkContact()" class="form-control" id="contact" placeholder="please enter member contact" required="required">
+     <input type="number" name="contact" value="<?php echo $row->contact; ?>" onchange="checkContact()" class="form-control" id="contact" placeholder="please enter member contact" required="required">
     </div>
     <div class="form-group">
           <span id="contactMessage"></span>

@@ -71,21 +71,21 @@ if(!isset($this->session->userdata['sess_id'])) {
         </div>
         <div class="form-group">
           <label for="weight">weight(in kg):</label>
-          <input type="text" name="weight" class="form-control" onchange="checkWeight()" id="weight" placeholder="please enter member weight" required="required">
+          <input type="number" name="weight" class="form-control" onchange="checkWeight()" id="weight" placeholder="please enter member weight" required="required">
         </div>
          <div class="form-group">
           <span id="weightMessage"></span>
         </div>
         <div class="form-group">
           <label for="ftheight">height(feet):</label>
-          <input type="text" name="ftheight" class="form-control" id="ftheight" onchange="checkftHeight()" placeholder="please enter feet" required="required">
+          <input type="number" name="ftheight" class="form-control" id="ftheight" onchange="checkftHeight()" placeholder="please enter feet" required="required">
         </div>
         <div class="form-group">
           <span id="ftheightMessage"></span>
         </div>
           <div class="form-group">
           <label for="heightinch">height(inch):</label>
-          <input type="text" name="heightinch" class="form-control" id="heightinch" onchange="checkHeightinch()" placeholder="please enter inch" required="required">
+          <input type="number" name="heightinch" class="form-control" id="heightinch" onchange="checkHeightinch()" placeholder="please enter inch" required="required">
         </div>
         <div class="form-group">
           <span id="heightinchMessage"></span>
@@ -93,7 +93,7 @@ if(!isset($this->session->userdata['sess_id'])) {
         
     <div class="form-group">
      <label for="contact">Member Contact:</label>
-     <input type="text" name="contact" onchange="checkContact()" class="form-control" id="contact" placeholder="please enter member contact" required="required">
+     <input type="number" name="contact" onchange="checkContact()" class="form-control" id="contact" placeholder="please enter member contact" required="required">
     </div>
     <div class="form-group">
           <span id="contactMessage"></span>

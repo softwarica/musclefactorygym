@@ -10,7 +10,8 @@ color:white !important;
 <body>
 <?php include('header.php');?>
  
-	<div class="header" style="font-size: 12px;">
+<!--  this content is inside picture -->
+	<div class="header" style="font-size: 12px;"><!-- start header -->
 	   <div class="container" >
 		  <div class="header-text">
 			<h1>MUSCLE FACTORY</h1>
@@ -24,43 +25,31 @@ color:white !important;
 			</div>
 		  </div>
     </div>
-    </div>
+    </div><!-- end of header -->
 
     <div class="menu" id="menu">
 	  <div class="container" >
-
-		 <!-- <div class="logo">
-			<a href="index.html">
-         <img src="<?php echo base_url();?>assets/images/logo/logo.png" alt"" class="img-responsive" width="100"/></a>
-		 </div> -->
 		 <div class="h_menu4"><!-- start h_menu4 -->
-		   <!-- <a class="toggleMenu" href="#">Menu</a> -->
 			 <ul class="nav">
 			   <li class="active"><a href="#">Home</a></li>
-			   
-			   <!-- <li><a href="<?php echo base_url();?>controlWelcome/goToLogin">Trainer</a></li> -->
-			   <li><a href="<?php echo base_url();?>controlVideo/getVideo">videos</a>
-
-			   </li>
+			   <li><a href="<?php echo base_url();?>controlVideo/getVideo">videos</a></li>
 			   <li><a href="<?php echo base_url();?>controlImage/getImage">images</a></li>
 			   <li><a href="<?php echo base_url();?>controlExercise/getExercise">exercises</a></li>
 			   <li><a href="<?php echo base_url();?>controlDiet/getDiet">diets</a></li>
 			   <li><a href="<?php echo base_url();?>controlWelcome/goToLogin" class="btn btn-success">login</a></li>
 			 </ul>
-			<!--   <script type="text/javascript" src="<?php echo base_url();?>assets/js/nav.js"></script> -->
 		  </div><!-- end h_menu4 -->
 		 <div class="clear"></div>
 	  </div>
 	</div>
 	<!-- end menu -->
-	 <div class="main">
+
+
+	 <div class="main"><!--  start second main -->
 	 	 <div class="container-fluid" >
-			<!-- start content-top -->
 			<div class="row content-top" style="font-size:12px;">
 				
 				 <div class="col-md-4">
-				   <!-- <h3>NISCHAL shrestha</h3>
-				   <p>aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p> -->
 				   <div class="card">
 				   <div class="panel panel-default">
 				   	<div class="panel panel-heading" style="background: #72d0f4;">
@@ -180,9 +169,20 @@ color:white !important;
 
             </div>
 		 </div>
+		 </div> <!-- end of second main -->
+
+
 		<!-- end content-top -->
-		<div class="container">
-		    <div class="row content-middle">
+	<!-- 	<div class="container-fluid">
+			<div class="row content-top">
+			
+			<div class="clear"></div>
+			</div> -->
+			
+		
+		<div class="main"> <!-- start third main -->
+		<div class="container-fluid">
+		    <div class="row content-top">
 		      <!-- start content-middle -->
 		       
 		      <div class="col-lg-3">
@@ -223,6 +223,7 @@ color:white !important;
 			 
 				<div class="clear"></div>
 		   </div>
+
 		   <div class="col-lg-3">
 		       <div class="card">
      	 <a href="<?php echo base_url();?>controlDiet/getDiet">
@@ -261,6 +262,7 @@ color:white !important;
 			 
 				<div class="clear"></div>
 		   </div>
+
 		   <div class="col-lg-3 ">
 		     	 <h3 class="m_2 card">All Classes</h3>
 		     	 <div class="classes">
@@ -295,6 +297,7 @@ color:white !important;
 		     	 	
 		     	 </div>
 				</div>
+
 				<div class="col-md-3">
 				  <h3 class="m_2 card">Membership Prices</h3>
 				  <div class="members">
@@ -307,19 +310,48 @@ color:white !important;
 			    </div>
 			    <div class="clear"></div>
 		   </div>
-		 
-			
-		    <div class="row content_middle_bottom">
-			  <div class="col-md-4 ">
-		        <h3 class="m_2 card">Our Trainers</h3>
-		         <div class="course_demo">
+		 </div>
+		 </div> <!-- end of third main -->
+		
+
+		 <div class="main"> <!-- start main for youtube video and fb div -->
+		<div class="container-fluid">
+		    <div class="row content-top">
+
+		    <div class="col-lg-6">
+			<h3 class="m_2 card">youtube video</h3>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/24fdcMw0Bj0" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<div class="col-lg-6"><!-- start div for fb -->
+			<h3 class="m_2 card">facebook</h3>
+			 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmuscle factoy-1797730350500774%2F&tabs=timeline&width=340&height=162&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+			</div><!-- end div of fb -->
+
+
+
+		    </div>
+		    </div>
+		    </div><!-- end fb and youtube div -->
+
+
+
+ 
+     <div class="main"> <!-- start fourth main -->
+		<div class="container-fluid">
+		    <div class="row content-top">
+		    		<div class="col-lg-4"> <!-- start trainer content -->
+		    		<h3 class="m_2 card">Our Trainers</h3>
+		    		<div class="course_demo">
 		          <ul id="flexiselDemo3">
-		          <?php
+		    			   <?php
 				if($trainer->num_rows()>0){
 					foreach($trainer->result() as $row){
 						?>
-
-					<li><img src="<?php echo base_url();?>assets/images/trainers/<?php echo $row->image;?>"><div class="desc">
+						
+					<li>
+					<img src="<?php echo base_url();?>assets/images/trainers/<?php echo $row->image;?>"><div class="desc">
 						<h3><?php echo $row->tname;?><br><span class="m_text"><?php echo $row->address;?></span></h3>
 						<p><?php echo $row->contact;?><br></p><?php echo $row->email;?></p>
 						<div class="coursel_list col-lg-offset-4">
@@ -328,16 +360,19 @@ color:white !important;
 						</div>
 				
 						<div class="clear"></div>
-					</div></li>
+					</div>
+					</li>
+					
 					<?php
 					}
 				}
 		          ?>
-				
-				</ul>
+		          </ul>
+		          </div>
+		    		</div><!-- end trainer content -->
 
-				<!-- ............................................................ -->
-				<!-- this javascript is for our trainer div -->
+		    		<!-- start java script for trainer div -->
+
 				<script type="text/javascript">
 			$(window).load(function() {
 				$("#flexiselDemo3").flexisel({
@@ -367,11 +402,9 @@ color:white !important;
 		</script>
 	<!-- ............................................................ -->
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.flexisel.js"></script>
-	  </div>
-     </div>
-     <!-- ......................... -->
-     
-     <div class="col-md-8" >
+		    		<!-- end javascript for trainer div -->
+
+     <div class="col-md-8" ><!-- start exercises -->
      <div class="card">
      	 <a href="<?php echo base_url();?>controlExercise/getExercise"><h3 class="m_2">Exercises</h3></a>
      	 </div>
@@ -490,14 +523,18 @@ color:white !important;
      	 	</div>
      	 	  <a href="<?php echo base_url();?>controlExercise/getAbsExercise"><h5 class="m_2">click here for abs exercises</h5></a>
      	 </div>
-     	 
+           </div><!-- end of exercises -->
+           <div class="clear"></div>
+			</div>
+			</div>
+			</div> <!-- end fourth main -->
+
     
-           </div>
-<div class="clear"></div>
-     </div>
 
 
 <!--      ...................... -->
+<div class="main"><!-- start for gallery -->
+<div class="container">
       <div class="row about">
 		 <div class="col-md-12">
 		     	 <div class="card">
@@ -505,7 +542,8 @@ color:white !important;
      	 <h3 class="m_2">Gallery</h3></a></div>
 		     	 <div id="ca-container" class="ca-container card" style="height:180px;">
 				    <div class="ca-wrapper">
-
+				    		
+		         
 				    <?php
 				    if($image->num_rows()>0){
 				    	foreach($image->result() as $row){
@@ -521,6 +559,7 @@ color:white !important;
 				    	}
 				    }
 				    	?>
+				    	
 			    </div>
 			 </div>
 				    <script type="text/javascript">
@@ -529,8 +568,9 @@ color:white !important;
 		   </div>
 	       <div class="clear"></div>
 	      </div>
-	     </div>
-		</div>
+	      </div>
+	      </div><!-- end gallary -->
+	    
 
 
 	    <div class="map">

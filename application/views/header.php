@@ -15,7 +15,7 @@
 </div>
 </div>
 
-<div class="col-lg-4">
+<!-- <div class="col-lg-4">
   <div class="social">
      <ul><li class="facebook"><a href="#menu"></a><a href="#"><span> </span></a></li>
       <li class="twitter"><a href="#"><span> </span></a></li>
@@ -26,7 +26,7 @@
       <li class="rss"><a href="#"><span> </span></a></li>
      </ul>
    </div>
- </div>
+ </div> -->
    <div class="clear"></div>
 </div>
 

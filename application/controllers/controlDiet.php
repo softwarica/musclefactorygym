@@ -1,5 +1,13 @@
 <?php
 class ControlDiet extends CI_Controller{
+	public function __construct(){
+		parent:: __construct();
+		// header('Expires: Thu, 01-Jan-70 00:00:01 GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+header('Cache-Control:no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+	}
 	public function newDiet(){
 		$dname=$this->input->post('dname');
 			$dcat=$this->input->post('dcat');

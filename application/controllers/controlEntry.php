@@ -33,6 +33,37 @@ class ControlEntry extends CI_Controller{
 		redirect('ControlEntry/goToMemberEntry');
 
 	}
+
+	public function retriveEntryMembers(){
+		$date=$this->input->get('date');
+
+		$this->load->model('modelEntry');
+		$result=$this->modelEntry->retriveEntryByDate($date);
+
+		$data['entrylist']=$result;
+		$this->load->view('admin/entrylist',$data);
+	}
+
+	public function retriveMemberEntryOnSelectedDate(){
+		$rmbedate=$this->input->post('rmbedate');
+		
+			$this->load->model('modelEntry');
+		$result=$this->modelEntry->retriveEntryByDate($rmbedate);
+
+		$data['entrylist']=$result;
+		$this->load->view('admin/entrylist',$data);
+	}
+
+	public function removeEntry(){
+		$id=$this->input->get('id');
+		$edate=$this->input->get('edate');
+		$this->load->model('modelEntry');
+		$this->modelEntry->deleteEntry($id);
+
+		$this->session->set_flashData('entrydelete','this member is not in gym hall');
+		redirect(base_url()."ControlEntry/retriveEntryMembers?date=".$edate);
+	}
 }
+
 
 ?>

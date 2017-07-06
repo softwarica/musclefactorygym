@@ -23,6 +23,16 @@ class ModelEntry extends CI_Model{
 		$this->db->where('edate',$ldate); //entry date == left date to update time of same person on different date
 		$this->db->update('tblentry',$arr);
 	}
+
+	public function retriveEntryByDate($date){
+		$this->db->where('edate',$date);
+		return $this->db->get('tblentry');
+	}
+
+	public function deleteEntry($id){
+		$this->db->where('id',$id);
+		$this->db->delete('tblentry');
+	}
 }
 
 

@@ -3,9 +3,14 @@
 	<style type="text/css">
 	h4{
 color:white !important;
+font-size:15px !important;
 
 	}
-	
+	h3{
+font-size:18px !important;
+color:blue !important;
+
+	}
 </style>
 <body>
 <?php include('header.php');?>
@@ -36,7 +41,7 @@ color:white !important;
 			   <li><a href="<?php echo base_url();?>controlImage/getImage">images</a></li>
 			   <li><a href="<?php echo base_url();?>controlExercise/getExercise">exercises</a></li>
 			   <li><a href="<?php echo base_url();?>controlDiet/getDiet">diets</a></li>
-			   <li><a href="<?php echo base_url();?>assets/ug/ug.pdf">help</a></li>
+			   <li><a href="<?php echo base_url();?>assets/ug/ugfile.pdf">help</a></li>
 			   <li><a href="<?php echo base_url();?>controlWelcome/goToLogin" class="btn btn-success">login</a></li>
 			 </ul>
 		  </div><!-- end h_menu4 -->
@@ -174,12 +179,7 @@ color:white !important;
 
 
 		<!-- end content-top -->
-	<!-- 	<div class="container-fluid">
-			<div class="row content-top">
-			
-			<div class="clear"></div>
-			</div> -->
-			
+
 		
 		<div class="main"> <!-- start third main -->
 		<div class="container-fluid">
@@ -200,22 +200,6 @@ color:white !important;
 					 <div class="view view-fifth card">
 				  	   <img src="<?php echo base_url();?>assets/images/videologo.jpg" class="img-responsive" alt="">
 
-				  	  <!--  ============================================ -->
-
-				  	 <!--  	<video  width="auto" height="350" controls>
-							  <source src="<?php echo base_url();?>assets/videos/video1.mp4" type="video/mp4">
-							  <source src="<?php echo base_url();?>assets/videos/video.ogg" type="video/ogg">
-							  <source src="<?php echo base_url();?>assets/videos/video.webm" type="video/webm">
-							  <object data="<?php echo base_url();?>assets/videos/video.mp4"  height="350">
-							    <embed src="<?php echo base_url();?>assets/videos/video.swf"  height="350">
-							  </object> 
-							  Your browser does not support the video tag.
-							</video> -->
-
-						<!-- <canvas id="myCanvas" style="border:0px solid #FFF;"> 
-						</canvas>  -->
-
-				  	<!--    ============================================ -->
 					      <div class="mask">
 	                       	<div class="info">view More</div>
 			              </div>
@@ -239,22 +223,6 @@ color:white !important;
 					 <div class="view view-fifth card">
 				  	   <img src="<?php echo base_url();?>assets/images/dietslogo.jpg" class="img-responsive" alt="">
 
-				  	  <!--  ============================================ -->
-
-				  	  <!-- 	<video  width="auto" height="350" controls>
-							  <source src="<?php echo base_url();?>assets/videos/video1.mp4" type="video/mp4">
-							  <source src="<?php echo base_url();?>assets/videos/video.ogg" type="video/ogg">
-							  <source src="<?php echo base_url();?>assets/videos/video.webm" type="video/webm">
-							  <object data="<?php echo base_url();?>assets/videos/video.mp4"  height="350">
-							    <embed src="<?php echo base_url();?>assets/videos/video.swf"  height="350">
-							  </object> 
-							  Your browser does not support the video tag.
-							</video> -->
-
-						<!-- <canvas id="myCanvas" style="border:0px solid #FFF;"> 
-						</canvas>  -->
-
-				  	<!--    ============================================ -->
 					      <div class="mask">
 	                       	<div class="info">view More</div>
 			              </div>
@@ -277,15 +245,7 @@ color:white !important;
 			     	 	<ul class="cardio">
 			     	 		<li><i class="clock"> </i><span><?php echo $row->cname;?></span></li>
 			     	 	</ul>
-			     	 	
-			     	 <!-- 	<div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="timetable"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Send to"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="like it"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="share"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div> -->
+			     	
 			     	 	<div class="clear"></div>
 		     	
  	 </div>
@@ -319,18 +279,10 @@ color:white !important;
 		<div class="container-fluid">
 		    <div class="row content-top">
 
-		    <div class="col-lg-6">
+		    <div class="col-lg-6 col-lg-offset-3">
 			<h3 class="m_2 card">youtube video</h3>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/24fdcMw0Bj0" frameborder="0" allowfullscreen></iframe>
 			</div>
-
-			<div class="col-lg-6"><!-- start div for fb -->
-			<h3 class="m_2 card">facebook</h3>
-			 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmuscle factoy-1797730350500774%2F&tabs=timeline&width=340&height=162&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-
-			</div><!-- end div of fb -->
-
-
 
 		    </div>
 		    </div>
@@ -344,7 +296,7 @@ color:white !important;
 		    <div class="row content-top">
 		    		<div class="col-lg-4"> <!-- start trainer content -->
 		    		<h3 class="m_2 card">Our Trainers</h3>
-		    		<div class="course_demo">
+		    		<div class="course_demo"> <!-- start course demo -->
 		          <ul id="flexiselDemo3">
 		    			   <?php
 				if($trainer->num_rows()>0){
@@ -369,7 +321,14 @@ color:white !important;
 				}
 		          ?>
 		          </ul>
-		          </div>
+		          </div> <!-- end course demo -->
+
+			<div class="col-lg-12" style="margin-top:10px;"><!-- start div for fb -->
+			<a href="https://www.facebook.com/muscelgym.factory/?ref=br_rs">
+			<h3 class="m_2 card"> click here for facebook page of muscle factory gym</h3>
+			</a>
+
+			</div><!-- end div of fb -->
 		    		</div><!-- end trainer content -->
 
 		    		<!-- start java script for trainer div -->
@@ -439,9 +398,7 @@ color:white !important;
 	     	 		view more
 	     	 		</a>
 	     	 		</div>
-	     	 		<!-- <div class="btn2">
-					   <a href="#">Reservation</a>
-					</div> -->
+	     	 		
 	     	 	</ul>
      	 		<div class="clear"></div>
      	 	</div>
@@ -478,9 +435,7 @@ color:white !important;
 	     	 		view more
 	     	 		</a>
 	     	 		</div>
-	     	 		<!-- <div class="btn2">
-					   <a href="#">Reservation</a>
-					</div> -->
+	     	 	
 	     	 	</ul>
      	 		<div class="clear"></div>
      	 	</div>
@@ -497,9 +452,7 @@ color:white !important;
 	     	 		view more
 	     	 		</a>
 	     	 		</div>
-	     	 		<!-- <div class="btn2">
-					   <a href="#">Reservation</a>
-					</div> -->
+	     	 	
 	     	 	</ul>
      	 		<div class="clear"></div>
      	 	</div>
@@ -522,7 +475,26 @@ color:white !important;
 	     	 	</ul>
      	 		<div class="clear"></div>
      	 	</div>
-     	 	  <a href="<?php echo base_url();?>controlExercise/getAbsExercise"><h5 class="m_2">click here for abs exercises</h5></a>
+     	 	<div class="event-bottom card" style="background:#72d0f4;margin-top:5px;">
+	     	 	<ul class="event1">
+	     	 		<!-- <h4>26 April, 2014</h4> -->
+	     	 		<img src="<?php echo base_url();?>assets/images/abs.gif" alt=""/>
+	     	 	</ul>
+	     	 	<ul class="event1_text">
+	     	 		<!-- <span class="m_5">h.12.00-h.13.00</span> -->
+	     	 		<h4>abs exercise</h4>
+	     	 		<div class="btn2">
+	     	 		<a href="<?php echo base_url();?>controlExercise/getAbsExercise">
+	     	 		view more
+	     	 		</a>
+	     	 		</div>
+	     	 		<!-- <div class="btn2">
+					   <a href="#">Reservation</a>
+					</div> -->
+	     	 	</ul>
+     	 		<div class="clear"></div>
+     	 	</div>
+     	 	
      	 </div>
            </div><!-- end of exercises -->
            <div class="clear"></div>
@@ -575,7 +547,7 @@ color:white !important;
 
 
 	    <div class="map">
-			<iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2&amp;output=embed"> </iframe><br><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2" style="color:#666;font-size:12px;text-align:left"> </a></small>
+			<iframe width="100%"" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.6848520817929!2d85.38122652065766!3d27.733506226300843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc36ad09f0b34fe12!2sNepal+Medical+College+and+Teaching+Hospital!5e1!3m2!1sen!2snp!4v1499316205785" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2" style="color:#666;font-size:12px;text-align:left"> </a></small>
 			<div class="opening_hours">
 			 <ul class="times">
 			 	<h3>Opening <span class="opening">Hours</span></h3>
@@ -586,7 +558,6 @@ color:white !important;
 			 	<li><i class="calender"> </i><span class="week">Friday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
 			 	<li><i class="calender"> </i><span class="week">Saturday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
 			 	<li><i class="calender"> </i><span class="week">Sunday</span><div class="hours">h.6:00-h.24:00</div>  <div class="clear"></div></li>
-			    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
 			 	<h4>Enjoy it!</h4>
 			 </ul>
 		    </div>

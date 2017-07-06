@@ -34,11 +34,11 @@
    <div class="col-md-4">
      <ul class="list">
        <h4 class="m_7">Menu</h4>
-       <li><a href="#">images</a></li>
-       <li><a href="#">videos</a></li>
-       <li><a href="#">exercises</a></li>
-       <li><a href="#">diets</a></li>
-       <li><a href="#">Contact</a></li>
+        <li><a href="<?php echo base_url();?>controlVideo/getVideo">videos</a></li>
+         <li><a href="<?php echo base_url();?>controlImage/getImage">images</a></li>
+         <li><a href="<?php echo base_url();?>controlExercise/getExercise">exercises</a></li>
+         <li><a href="<?php echo base_url();?>controlDiet/getDiet">diets</a></li>
+         <li><a href="<?php echo base_url();?>assets/ug/ugfile.pdf">help</a></li>
      </ul>
     <!--  <ul class="list1">
        <h4 class="m_7">Community</h4>

@@ -44,7 +44,9 @@ font-size: 12px !important;
 <div class="col-lg-4 col-lg-offset-2">
 <div class="panel panel-default">
   <div class="panel panel-heading">
-  <h3 align="center" class="btn btn-link">member entry action:</h3>
+  <h3 align="center" class="btn btn-link">member entry action:
+<span style="color:red"><?php  echo $this->session->flashdata('entrydelete');?></span>
+  </h3>
   </div>
   <div class="panel panel-body" style="height:30px;">
 
@@ -67,7 +69,9 @@ font-size: 12px !important;
 <div class="col-lg-4">
 <div class="panel panel-default">
   <div class="panel panel-heading">
-  <h3 align="center" class="btn btn-link">member payment action:</h3>
+  <h3 align="center" class="btn btn-link">member payment action:
+<span style="color:red"><?php  echo $this->session->flashdata('paymentdelete');?></span>
+  </h3>
   </div>
   <div class="panel panel-body" style="height:30px;">
 

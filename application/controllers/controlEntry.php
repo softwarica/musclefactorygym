@@ -60,8 +60,8 @@ class ControlEntry extends CI_Controller{
 		$this->load->model('modelEntry');
 		$this->modelEntry->deleteEntry($id);
 
-		$this->session->set_flashData('entrydelete','this member is not in gym hall');
-		redirect(base_url()."ControlEntry/retriveEntryMembers?date=".$edate);
+		$this->session->set_flashData('entrydelete','delete successfull');
+		redirect('controlWelcome/goToAdmin');
 	}
 }
 

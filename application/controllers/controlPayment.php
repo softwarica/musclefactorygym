@@ -50,8 +50,8 @@ $this->load->model('modelPayment');
 		$this->load->model('modelPayment');
 		$this->modelPayment->deletePayment($id);
 
-		$this->session->set_flashData('paymentdelete','this member is has not paid');
-		redirect('ControlPayment/getPayment');
+		$this->session->set_flashData('paymentdelete','delete sucessfull');
+		redirect('controlWelcome/goToAdmin');
 	}
 
 }

@@ -12,7 +12,7 @@ if(!isset($this->session->userdata['sess_id'])) {
 <div class="panel panel-default" style="margin-top:10px">
   <div class="panel panel-heading">
 <h5 class="btn btn-link">Member entry list:
-<span style="color:red"><?php  echo $this->session->flashdata('entrydelete');?></span>
+
 </h5>
 
   </div>

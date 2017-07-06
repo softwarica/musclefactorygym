@@ -50,7 +50,7 @@ if($mid->num_rows() > 0){
   </div>
  <div class="form-group">
     <label for="repdate">re- payment date:</label>
-    <input type="date"  name="repdate" class="form-control" id="repdate" placeholder="please enter entry time" required="required">
+    <input type="date" name="repdate" onchange="printInvoice()" class="form-control" id="repdate" placeholder="please enter entry time" required="required">
   </div>
 
 <div class="panel panel-footer">
@@ -93,7 +93,9 @@ if($mid->num_rows() > 0){
 
     }
 
-
+function  printInvoice(){
+  window.print();
+}
 </script>
 <script>
  

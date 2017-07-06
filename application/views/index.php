@@ -16,18 +16,27 @@ color:blue !important;
 <?php include('header.php');?>
  
 <!--  this content is inside picture -->
+
 	<div class="header" style="font-size: 12px;"><!-- start header -->
 	   <div class="container" >
+
 		  <div class="header-text">
-			<h1>MUSCLE FACTORY</h1>
-			<h2>Best Choice For fitness</h2>
+			<h1>MUSCLE FACTORY:
+<a><span style="color:red"><?php  echo $this->session->flashdata('feedbackmsg');?></span></a>
+			</h1>
+			<h2>Best Choice For fitness:
+
+			</h2>
 			<p>
         Exercise is extremely important to staying healthy both in body and mind.
          Being active can help a person continue to do things they enjoy and be independent as they age
        </p>
 			<div class="banner_btn">
 				<a href="#">Read More</a>
+
 			</div>
+
+
 		  </div>
     </div>
     </div><!-- end of header -->

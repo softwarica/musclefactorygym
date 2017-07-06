@@ -10,7 +10,9 @@
   <div class="container">
   <div class="row section group">
    <div class="col-md-4">
-      <h4 class="m_7">send message</h4>
+      <h4 class="m_7">send message:
+
+      </h4>
       <p class="m_8">to mr.sharan shrestha.</p>
          <form action="<?php echo base_url();?>controlMessage/newMessage" method="post">
         <div class="form-group">

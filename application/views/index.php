@@ -8,7 +8,7 @@ font-size:15px !important;
 	}
 	h3{
 font-size:18px !important;
-color:blue !important;
+color:#72d0f4 !important;
 
 	}
 </style>
@@ -284,18 +284,18 @@ color:blue !important;
 		 </div> <!-- end of third main -->
 		
 
-		 <div class="main"> <!-- start main for youtube video and fb div -->
-		<div class="container-fluid">
+		 <!-- <div class="main"> start main for youtube video and fb div -->
+		<!-- div class="container-fluid">
 		    <div class="row content-top">
 
 		    <div class="col-lg-6 col-lg-offset-3">
 			<h3 class="m_2 card">youtube video</h3>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/24fdcMw0Bj0" frameborder="0" allowfullscreen></iframe>
+			<iframe  src="https://www.youtube.com/embed/24fdcMw0Bj0" frameborder="0" allowfullscreen></iframe>
 			</div>
 
 		    </div>
 		    </div>
-		    </div><!-- end fb and youtube div -->
+		  <!--   </div>end fb and youtube div -->
 
 
 
@@ -338,6 +338,12 @@ color:blue !important;
 			</a>
 
 			</div><!-- end div of fb -->
+
+				<div class="col-lg-12"> <!-- start youtube div -->
+			<h3 class="m_2 card">youtube video</h3>
+			<iframe width="100%" src="https://www.youtube.com/embed/24fdcMw0Bj0" frameborder="1" allowfullscreen></iframe>
+			</div> <!-- end youtube div -->
+
 		    		</div><!-- end trainer content -->
 
 		    		<!-- start java script for trainer div -->

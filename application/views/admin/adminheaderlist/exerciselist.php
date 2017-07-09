@@ -69,7 +69,7 @@ if($exerciselist->num_rows() > 0){
 	     	 		</div>
 	     	 		<div class="col-lg-9" style="word-wrap: break-word;">
 	     	 		<b>Exercise details:</b>
-	     	 		<textarea style="height:200px;width:100%"><?php echo $row->eqdetails;?></textarea>
+	     	 		<textarea readonly="readonly" style="height:200px;width:100%"><?php echo $row->eqdetails;?></textarea>
 	     	 		</div>
 	     	 		</div>
 	     	 	 

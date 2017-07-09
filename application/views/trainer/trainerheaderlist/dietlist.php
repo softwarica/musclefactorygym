@@ -69,7 +69,7 @@ if($dietlist->num_rows() > 0){
 	     	 		</div>
 	     	 		<div class="col-lg-9">
 	     	 		<b>Diet details:</b>
-	     	 		<textarea style="height:200px;width:100%"><?php echo $row->ddetails;?></textarea>
+	     	 		<textarea readonly="readonly" style="height:200px;width:100%"><?php echo $row->ddetails;?></textarea>
 	     	 		</div>
 	     	 		</div>
 	     	 	 

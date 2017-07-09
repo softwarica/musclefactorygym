@@ -43,7 +43,7 @@ if($exercise->num_rows() > 0){
 	     	 		</div>
 	     	 		<div class="col-lg-12" style="word-wrap: break-word;">
 	     	 		<h4>Exercise details:</h4>
-	     	 		<textarea style="height:200px;width:100%"><?php echo $row->eqdetails;?></textarea>
+	     	 		<textarea readonly="readonly" style="height:200px;width:100%"><?php echo $row->eqdetails;?></textarea>
 	     	 		</div>
 	     	 		<!-- <div class="btn2">
 					   <a href="#">Reservation</a>

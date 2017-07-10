@@ -51,7 +51,14 @@ if(!isset($this->session->userdata['sess_id'])) {
                <li><a data-toggle="pill" href="#menu3">TRAINER LIST</a></li>
                 <li><a data-toggle="pill" href="#menu4">IMAGES LIST</a></li>
                  <li><a data-toggle="pill" href="#menu5">VIDEOS LIST</a></li>
-               <li><a href="<?php echo base_url();?>controlCheck/destroySession">LOGOUT</a></li>
+                     <li>
+                     <a href="">Actions</a>
+                  <ul class="sub-menu">
+                    <li><a href="<?php echo base_url();?>controlCheck/destroySession">LOGOUT</a></li>
+                    <li><a href="<?php echo base_url();?>controlWelcome/goToChangePassword">change password</a></li>
+                  </ul>
+                  </li>
+               
              </ul>
                
              <script type="text/javascript" src="<?php echo base_url();?>assets/js/nav.js"></script>

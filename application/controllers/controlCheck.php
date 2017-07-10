@@ -64,10 +64,7 @@ header('Pragma: no-cache');
 	}
 
 	public function checkUnameAvailability(){
-		// if(!filter_val($_POST['uname'], FILTER_VALIDATE_EMAIL)){
-		// 	echo 'invalid email';
-
-		// }else{
+	
 			$this->load->model('modelCheck');
 			if($this->modelCheck->isUnameAvailable($_POST['uname'])){
 					echo 'uname already register';
@@ -76,12 +73,30 @@ header('Pragma: no-cache');
 				echo 'valid uname';
 			}
 		}
+		public function checkUnameAvailabilityFromTblAdmin(){
+	
+			$this->load->model('modelCheck');
+			if($this->modelCheck->isUnameAvailableInTblAdmin($_POST['cuname'])){
+					echo 'uname match';
+			}
+			else{
+				echo 'uname not match';
+			}
+		}
+
+		public function checkPwordAvailabilityFromTblAdmin(){
+	
+			$this->load->model('modelCheck');
+			if($this->modelCheck->isPwordAvailableInTblAdmin($_POST['cpword'])){
+					echo 'password match';
+			}
+			else{
+				echo 'password not match';
+			}
+		}
 
 			public function checkTrainerUnameAvailability(){
-		// if(!filter_val($_POST['uname'], FILTER_VALIDATE_EMAIL)){
-		// 	echo 'invalid email';
-
-		// }else{
+		
 			$this->load->model('modelCheck');
 			if($this->modelCheck->isTrainerUnameAvailable($_POST['uname'])){
 					echo 'uname already register';
@@ -163,6 +178,19 @@ header('Pragma: no-cache');
 			
 
 		}
+
+public function changePassword(){
+	$cuname=$this->input->post('cuname');
+	$cpword=$this->input->post('cpword');
+	$uname=$this->input->post('uname');
+	$pword=$this->input->post('pword');
+
+	$this->load->model('modelCheck');
+	$this->modelCheck->updatePassword($cuname,$cpword,$uname,$pword);
+
+	$this->session->set_flashData('changemsg','username and password successfully changed');
+	redirect('controlWelcome/goToChangePassword');
+}
 	
 }
 

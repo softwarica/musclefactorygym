@@ -47,6 +47,30 @@ class ModelCheck extends CI_Model{
 		}
 	}
 
+
+	public function isUnameAvailableInTblAdmin($cuname){
+		$this->db->where('uname',$cuname);
+		$query=$this->db->get('tbladmin');
+
+		if($query->num_rows() >0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+	public function isPwordAvailableInTblAdmin($cpword){
+		$this->db->where('pword',$cpword);
+		$query=$this->db->get('tbladmin');
+
+		if($query->num_rows() >0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function isTrainerUnameAvailable($uname){
 		$this->db->where('uname',$uname);
 		$query=$this->db->get('tbltrainer');
@@ -92,6 +116,16 @@ class ModelCheck extends CI_Model{
 		return $this->db->get('tblschedule');
 	}
 
+public function updatePassword($cuname,$cpword,$uname,$pword){
+	$arr=array(
+		'uname'=>$uname,
+		'pword'=>$pword
+	);
+	$this->db->where('uname',$cuname);
+	$this->db->where('pword',$cpword);
+
+	$this->db->update('tbladmin',$arr);
+}
 
 }
 ?>

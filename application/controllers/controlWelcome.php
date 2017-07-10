@@ -79,6 +79,9 @@ class ControlWelcome extends CI_Controller {
 	public function goToTrainerScheduleRegistration(){
 		$this->load->view('trainer/traineraction/trainerschedule');
 	}
+	public function  goToChangePassword(){
+		$this->load->view('admin/changepassword');
+	}
 }
 
 	

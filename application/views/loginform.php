@@ -18,7 +18,7 @@
 							<input type="text" id="uname" placehplder="please enter username" name="uname" required="required" class="form-control"/>
 						</div>
 						<div class="form-group">
-							<label for="uname">password:</label>
+							<label for="pword">password:</label>
 							<input type="password" id="pword" name="pword" required="required" placehplder="please enter password" class="form-control"/>
 						</div>
 					</div>

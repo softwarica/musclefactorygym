@@ -50,11 +50,11 @@ foreach($eqclass->result() as $row){
         </div>
  <div class="form-group">
     <label for="eqimage">Exercise image:</label>
-    <input type="file" name="eqimage" class="form-control" id="eqimage" required="required">
+    <input type="file" onclick="return confirm('please choose image of extention png/gif/jpt.')" name="eqimage" class="form-control" id="eqimage" required="required">
   </div>
   <div class="form-group">
     <label for="eqvideo">Exercise video:</label>
-    <input type="file" name="eqvideo" class="form-control" id="eqvideo" required="required">
+    <input type="file" name="eqvideo" onclick="return confirm('please choose video of extention mp4.')" class="form-control" id="eqvideo" required="required">
   </div>
    <div class="form-group">
     <label for="eqdetails">Exercise details:</label>

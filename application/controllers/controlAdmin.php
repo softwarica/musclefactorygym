@@ -2,30 +2,30 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ControlAdmin extends CI_Controller{
+
+public function __construct(){
+		parent:: __construct();
+		// header('Expires: Thu, 01-Jan-70 00:00:01 GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+header('Cache-Control:no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+	}
+
 public function index(){
 $this->load->view('admin/adminPage');
 }
 
-// public function openRegister(){
-//   $this->load->view('admin/register');
-// }
+public function searchMember(){
+			$forsearch=$this->input->post('forsearch');
 
-// public function do_upload(){
-// 		$config['upload_path']="assets/images/admin";
-// 		  $config['allowed_types']  = 'gif|jpg|png';
-// 		$config['max-width']="100";
-// 		$config['max-height']="100";
+			$this->load->model('modelAdmin');
+			$result=$this->modelAdmin->retriveSearchMember($forsearch);
 
-// 		$this->load->library('upload',$config);
-// 		if(!$this->upload->do_upload('userfile')){
-// 			$error = array( "error" => $this->upload->display_errors());
-// 			$this->load->view('upload_form', $error);
-// 		}else{
-// 			$data=array('upload_data'=>$this->upload->data());
-			  
-// 		}
+			$data['memberlist']=$result;
+			$this->load->view('admin/searchmember',$data);
 
-// }
+		}
 
 public function newMember(){
 		//form validation...........................................

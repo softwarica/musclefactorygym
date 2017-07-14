@@ -41,10 +41,14 @@ font-size: 12px !important;
 </ul>
 </div>
 
-
-  
-
 <div class="col-lg-12" style="margin-top:10px;">
+  <form method="post" action="<?php echo base_url();?>controlAdmin/searchMember" style="margin-left:380px">
+    <input type="text" name="forsearch" placeholder="search member..." class="form-control" style="width:500px;float:left"/>
+    <input type="submit" class="btn btn-success" name="btnsearch" value="search" style="margin-left: 20px;"/>
+    </form>
+</div>
+
+<div class="container-fluid" style="margin-top:10px;">
 <div class="col-lg-4 col-lg-offset-2">
 <div class="panel panel-default">
   <div class="panel panel-heading">

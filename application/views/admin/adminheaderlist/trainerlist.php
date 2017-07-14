@@ -51,7 +51,7 @@ if($trainerlist->num_rows() > 0)
 else
 {
 ?>
-<tr colspan="7"><h5 align="center">data not found</h5></tr>
+<tr colspan="7"><td>data not found...</td></tr>
 <?php
 }
   ?>

@@ -14,25 +14,6 @@ if(!isset($this->session->userdata['sess_id'])) {
 <body>
 
 
-
-
-<!-- <div style="background: url(<?php echo base_url();?>assets/images/admin.jpg)no-repeat center top;">
-   <div class="container">
-    <div class="header-text">
-    <h1>MUSCLE FACTORY</h1>
-    <h2>Best Choice For fitness</h2>
-    <p>
-      Exercise is extremely important to staying healthy both in body and mind.
-       Being active can help a person continue to do things they enjoy and be independent as they age
-     </p>
-    <div class="banner_btn">
-       <a href="#menu" class="class scroll">drop down
-          </a>
-    </div>
-    </div>
-  </div>
-  </div> -->
-
           <div class="menu" >
           <div class="container">
           
@@ -51,11 +32,11 @@ if(!isset($this->session->userdata['sess_id'])) {
                <li><a data-toggle="pill" href="#menu3">TRAINER LIST</a></li>
                 <li><a data-toggle="pill" href="#menu4">IMAGES LIST</a></li>
                  <li><a data-toggle="pill" href="#menu5">VIDEOS LIST</a></li>
-                     <li>
+                     <li class="active">
                      <a href="">Actions</a>
                   <ul class="sub-menu">
                     <li><a href="<?php echo base_url();?>controlCheck/destroySession">LOGOUT</a></li>
-                    <li><a href="<?php echo base_url();?>controlWelcome/goToChangePassword">change password</a></li>
+                    <li><a href="<?php echo base_url();?>controlWelcome/goToChangePassword">change username and password</a></li>
                   </ul>
                   </li>
                
@@ -86,22 +67,6 @@ if(!isset($this->session->userdata['sess_id'])) {
                        echo $this->session->flashdata('delvdomsg');
                          echo $this->session->flashdata('video_dtl_update');
                        echo $this->session->flashdata('image_dtl_update');
-                     
-                  // if(isset($_GET['id'])){
-                  //   // echo "<script type='text/javascript'>alert('$delete_message');</script>";
-                  //   echo $delete_message;
-                  // } else if(isset($_POST['btnsubmitedit'])){
-                  //   // echo "<script type='text/javascript'>alert('$update_message');</script>";
-                  //   echo $update_message;
-                  // } else if(isset($_POST['btnsubmitimage'])){
-                  //   echo $image_update;
-                  // } else if(isset($_POST['btnexercisesubmit'])){
-                  //   echo $exerciseSaveMsg;
-                  // } else if(isset($_POST['btnequipmentsubmit'])){
-                  //   echo $eqinsertmsg;
-                  // } 
-                   
-
                    ?></h3>
                    </div>
              <div class="tab-content main" id="menu">

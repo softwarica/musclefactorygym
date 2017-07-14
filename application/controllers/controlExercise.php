@@ -145,18 +145,6 @@ header('Pragma: no-cache');
 			$this->load->view('exerciseVideo',$data);
 		}
 
-		// public function getChestVideo(){
-		// 	$id=$this->input->get('id');
-			
-		// 	$this->load->model('modelExercise');
-		// 	$result=$this->modelExercise->retriveChestVideo($id);
-
-		// 	$data['chestexvideo']=$result;
-			
-
-		// 	$this->load->view('chestVideo',$data);
-		// }
-
 		public function searchExercise(){
 			$forsearch=$this->input->post('forsearch');
 

@@ -72,6 +72,10 @@ public function updateImage($id,$image){
 public function retriveClass(){
 			return $this->db->get('tblclass');
 		}
+public function retriveSearchMember($forsearch){
+			$this->db->like('mname',$forsearch);
+			return $this->db->get('tblregister');
+		}
 
 }
 ?>

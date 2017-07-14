@@ -21,7 +21,7 @@ if(!isset($this->session->userdata['sess_id'])) {
 <form name="myForm" action="<?php echo base_url();?>controlVideo/newVideo" method="post"  enctype="multipart/form-data">
    <div class="form-group">
     <label for="vname">Video Name:</label>
-    <input type="text" name="vname" class="form-control" id="vname" placeholder="please enter equipment name" required="required">
+    <input type="text" name="vname" class="form-control" id="vname" placeholder="please enter videoss name" required="required">
   </div>
 
   <div class="form-group">

@@ -17,7 +17,7 @@
          <form action="<?php echo base_url();?>controlMessage/newMessage" method="post">
         <div class="form-group">
           <label style="color:white"><u>type feedback:</u></label>
-          <textarea id="msg" name="msg" class="form-control" style="height:100px;width:100%"></textarea>
+          <textarea id="msg" name="msg" class="form-control" style="height:50px;width:100%"></textarea>
         </div>
            
              <input type="submit" class="btn btn-success" value="submit message"/>
@@ -26,7 +26,7 @@
    </div>
    <div class="col-md-4">
      <div class="f-logo">
-       <img src="<?php echo base_url();?>assets/images/logo/logo.png" alt="">
+       <img src="<?php echo base_url();?>assets/images/logo/logo.png" alt="" style="width:100px">
      </div>
      <p class="m_9"> Exercise is extremely important to staying healthy both in body and mind.
          Being active can help a person continue to do things they enjoy and be independent as they age</p>
@@ -42,13 +42,7 @@
          <li><a href="<?php echo base_url();?>controlDiet/getDiet">diets</a></li>
          <li><a href="<?php echo base_url();?>assets/ug/ugfile.pdf">help</a></li>
      </ul>
-    <!--  <ul class="list1">
-       <h4 class="m_7">Community</h4>
-       <li><a href="#">Blog</a></li>
-       <li><a href="#">Forum</a></li>
-       <li><a href="#">Support</a></li>
-       <li><a href="#">Newsletter</a></li>
-     </ul> -->
+   
    </div>
    <div class="clear"></div>
      </div>
@@ -59,17 +53,7 @@
    <div class="copy">
        <p>© 2017 sharan <a href="http://w3layouts.com" target="_blank"></a></p>
    </div>
-   <!-- <div class="social">
-    <ul>
-     <li class="facebook"><a href="#"><span> </span></a></li>
-     <li class="twitter"><a href="#"><span> </span></a></li>
-     <li class="pinterest"><a href="#"><span> </span></a></li>
-     <li class="google"><a href="#"><span> </span></a></li>
-     <li class="tumblr"><a href="#"><span> </span></a></li>
-     <li class="instagram"><a href="#"><span> </span></a></li>
-     <li class="rss"><a href="#"><span> </span></a></li>
-    </ul>
-   </div> -->
+ 
   <div class="clear"></div>
  </div>
   </div>

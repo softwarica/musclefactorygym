@@ -2,12 +2,19 @@
 <?php include_once('header.php');?>
 
 	<div class="panel panel-default">
-	<div class="panel panel-heading">
-		<b class="btn btn-link" style="float:left">videos</b>
+	<div class="panel panel-heading" style="height:80px;">
+	<div class="col-lg-4">
+		<h6 style="word-wrap: break-word;">Videos</h6>
+		</div>
 		<form method="post" action="<?php echo base_url();?>controlVideo/searchVideo">
-		<input type="text" name="forsearch" placeholder="search..." class="form-control" style="width:500px;float:left;margin-left: 80px;"/>
-		<input type="submit" class="btn btn-success" name="btnsearch" value="search" style="margin-left: 20px;"/>
+		<div class="col-lg-4">
+		<input type="text" name="forsearch" placeholder="search..." class="form-control"/>
+		</div>
+		<div class="col-lg-4">
+		<input type="submit" class="btn btn-success" name="btnsearch" value="search" style="clear: both"/>
+		</div>
 		</form>
+		
 	</div>
 	
 <div class="panel panel-body" style="font-size: 12px;">

@@ -41,15 +41,19 @@ font-size: 12px !important;
 </ul>
 </div>
 
-<div class="col-lg-12" style="margin-top:10px;">
-  <form method="post" action="<?php echo base_url();?>controlAdmin/searchMember" style="margin-left:380px">
-    <input type="text" name="forsearch" placeholder="search member..." class="form-control" style="width:500px;float:left"/>
-    <input type="submit" class="btn btn-success" name="btnsearch" value="search" style="margin-left: 20px;"/>
+<div class="col-lg-8 col-lg-offset-3" style="margin-top:10px; margin-bottom: 10px;">
+  <form method="post" action="<?php echo base_url();?>controlAdmin/searchMember">
+  <div class="col-lg-8">
+    <input type="text" name="forsearch" placeholder="search member..." class="form-control"/>
+    </div>
+    <div class="col-lg-4">
+    <input type="submit" class="btn btn-success" name="btnsearch" value="search"/>
+    </div>
     </form>
 </div>
 
-<div class="container-fluid" style="margin-top:10px;">
-<div class="col-lg-4 col-lg-offset-2">
+<div class="container-fluid">
+<div class="col-lg-3 col-lg-offset-3">
 <div class="panel panel-default">
   <div class="panel panel-heading">
   <h3 align="center" class="btn btn-link">member entry action:
@@ -58,7 +62,7 @@ font-size: 12px !important;
   </div>
   <div class="panel panel-body" style="height:30px;">
 
- <a style="margin-top:-20px;" class="btn btn-link"  href="<?php echo base_url();?>controlEntry/retriveEntryMembers?date=<?php echo date("Y/m/d");?>"><h4><b>todays:</b> total number of member in gym hall</h4></a> 
+ <a style="margin-top:-20px;" class="btn btn-link"  href="<?php echo base_url();?>controlEntry/retriveEntryMembers?date=<?php echo date("Y/m/d");?>"><h4><b>todays:</b><br/> total number of member in gym hall</h4></a> 
   </div>
   <div class="panel panel-footer"  style="height:80px;">
   <form action="<?php echo base_url();?>controlEntry/retriveMemberEntryOnSelectedDate" method="post">
@@ -74,7 +78,7 @@ font-size: 12px !important;
 
 
 
-<div class="col-lg-4">
+<div class="col-lg-3">
 <div class="panel panel-default">
   <div class="panel panel-heading">
   <h3 align="center" class="btn btn-link">member payment action:
@@ -83,10 +87,10 @@ font-size: 12px !important;
   </div>
   <div class="panel panel-body" style="height:30px;">
 
- <a style="margin-top:-20px;" class="btn btn-link"  href="<?php echo base_url();?>controlPayment/retrivePaymentMembers?date=<?php echo date("Y/m/d");?>"><h4><b>this months:</b>total members who clear payment for this months</h4></a> 
+ <a style="margin-top:-20px;" class="btn btn-link"  href="<?php echo base_url();?>controlPayment/retrivePaymentMembers?date=<?php echo date("Y/m/d");?>"><h4><b>this months:</b><br/>total members who clear payment<br/> for this months</h4></a> 
   </div>
   <div class="panel panel-footer"  style="height:80px;">
- <a style="margin-top:-20px;" class="btn btn-link"  href="<?php echo base_url();?>controlPayment/getPayment"><h4><b>payment history:</b> of members</h4></a> 
+ <a style="margin-top:10px;" class="btn btn-link"  href="<?php echo base_url();?>controlPayment/getPayment"><h4><b>payment history:</b> of members</h4></a> 
   </div>
 
 </div>

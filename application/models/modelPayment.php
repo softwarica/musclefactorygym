@@ -27,4 +27,11 @@ class ModelPayment extends CI_Model{
 		$this->db->where('id',$id);
 		$this->db->delete('tblpayment');
 	}
+
+	public function retrivePaidMember($mname,$repdate){
+		$this->db->where('repdate >=',$repdate);
+		$this->db->like('mname',$mname);
+
+		return $this->db->get('tblpayment');
+	}
 }

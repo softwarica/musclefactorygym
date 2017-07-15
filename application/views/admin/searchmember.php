@@ -2,10 +2,20 @@
 <?php $this->load->view('link');?>
 <div class="container-fluid">
 <div class="panel panel-default" style="margin-top:10px">
-  <div class="panel panel-heading">
-<h5 class="btn btn-link">Member list</h5>
-
-  </div>
+  <div class="panel panel-heading" style="height:80px;">
+	<div class="col-lg-4">
+		<h6 style="word-wrap: break-word;">members list</h6>
+		</div>
+		<form method="post" action="<?php echo base_url();?>controlAdmin/searchMember">
+		<div class="col-lg-4">
+		<input type="text" name="forsearch" placeholder="search..." class="form-control"/>
+		</div>
+		<div class="col-lg-4">
+		<input type="submit" class="btn btn-success" name="btnsearch" value="search" style="clear: both"/>
+		</div>
+		</form>
+		
+	</div>
 <div class="panel panel-body" >
 <div class="table-responsive">
 <table class="table" style="font-size: 12px;">
@@ -40,7 +50,7 @@ if($memberlist->num_rows() > 0)
 else
 {
 ?>
-<tr colspan="7"><h5 align="center">data not found</h5></tr>
+<tr colspan="7"><td>data not found...</td></tr>
 <?php
 }
   ?>

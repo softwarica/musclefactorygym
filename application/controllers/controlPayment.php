@@ -1,5 +1,15 @@
 <?php
 class ControlPayment extends CI_Controller{
+
+	public function __construct(){
+		parent:: __construct();
+		// header('Expires: Thu, 01-Jan-70 00:00:01 GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+header('Cache-Control:no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+	}
+	
 	public function goToMemberPayment(){
 
 	$this->load->model('modelPayment');
@@ -54,4 +64,14 @@ $this->load->model('modelPayment');
 		redirect('controlWelcome/goToAdmin');
 	}
 
+	public function searchPaidMember(){
+		$mname=$this->input->post('mname');
+		$repdate=$this->input->post('repdate');
+
+		$this->load->model('modelPayment');
+		$result=$this->modelPayment->retrivePaidMember($mname,$repdate);
+
+		$data['paymentlist']=$result;
+		$this->load->view('admin/paymentlist',$data);
+	}
 }

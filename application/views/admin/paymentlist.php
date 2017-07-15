@@ -10,12 +10,24 @@ if(!isset($this->session->userdata['sess_id'])) {
 <?php $this->load->view('admin/adminheader');?>
 <div class="container-fluid">
 <div class="panel panel-default" style="margin-top:10px">
-  <div class="panel panel-heading">
-<h5 class="btn btn-link">Member who clear payment list:
+ <div class="panel panel-heading" style="height:80px;">
+	<div class="col-lg-3">
+		<h6 style="word-wrap: break-word;">members who clear payment:</h6>
+		</div>
+		<form method="post" action="<?php echo base_url();?>controlPayment/searchPaidMember">
+		<div class="col-lg-3">
+		<input type="text" name="mname" placeholder="search members..." class="form-control" required/>
+		</div>
+		<div class="col-lg-3">
+		<input type="date" name="repdate" placeholder="search..." class="form-control" required/>
+		</div>
+		<div class="col-lg-3">
+		<input type="submit" class="btn btn-success" name="btnsearch" value="search" style="clear: both"/>
+		</div>
+		</form>
+		
+	</div>
 
-</h5>
-
-  </div>
 <div class="panel panel-body" >
 <div class="table-responsive">
 <table class="table" style="font-size: 12px;">
@@ -49,7 +61,7 @@ if($paymentlist->num_rows() > 0)
 else
 {
 ?>
-<tr colspan="7"><h5 align="center">data not found</h5></tr>
+<tr colspan="7"><td>data not found...</td></tr>
 <?php
 }
   ?>

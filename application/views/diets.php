@@ -24,7 +24,7 @@
 if($diets->num_rows() > 0){
   foreach($diets->result() as $row){
   ?>
-  <div class="col-lg-6 card" style="margin-top:15px;>
+  <div class="col-lg-6 card" style="margin-top:15px;">
         <div class="col-lg-6 card">
           
             <img src="<?php echo base_url();?>assets/images/diets/<?php echo $row->dimage;?>" alt="" class="img-responsive" >
